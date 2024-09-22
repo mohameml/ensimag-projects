@@ -1,0 +1,19 @@
+// Description:
+//    Programme avec while et if à la fois
+// Resultats:
+//    0123
+//
+// Historique:
+//    cree le 1/1/2024
+
+{
+    int x = 0; 
+    boolean y = true;
+    while (y){
+        print(x);
+        if (x==3){
+            y = false;
+        }
+        x = x + 1;
+    }
+}

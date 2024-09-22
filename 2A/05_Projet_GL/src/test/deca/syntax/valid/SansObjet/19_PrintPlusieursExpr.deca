@@ -1,0 +1,10 @@
+// Description:
+//    Programme  print avec plusières argument, tlq chaine de caractère, int et float  
+// Resultats:
+//      programme correcte syntaxiquement
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    print("hello",3);
+}

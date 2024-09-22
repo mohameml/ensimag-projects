@@ -1,0 +1,13 @@
+// Description:
+//    tests de programme incorrect syntaxiquement ,Or incorrecte car membre gauche n'est pas and_expr
+//
+// Resultats:
+//    ligne 12 : Erreur, mismatched input '*'
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    boolean x =true;
+    x = false;
+    x = x || *; 
+}

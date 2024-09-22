@@ -1,0 +1,17 @@
+// Description :
+//  une rédefinition du methode equals dans un sous sous classe 
+// Resultats :
+//    ligne 14 : une méthode rédefine doit avoir la même signature que la méthode héritée
+// Historique : 
+//  cree le 16/01/2024
+
+
+class A {
+
+}
+
+class B extends A {
+    boolean equals(int i) {
+
+    }
+}

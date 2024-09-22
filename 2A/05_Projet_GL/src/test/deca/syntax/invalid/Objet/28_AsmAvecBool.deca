@@ -1,0 +1,10 @@
+// Description:
+//    Programme mal utilisantion de asm , utilisation de true dans asm
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:23: mismatched input 'true' expecting {STRING, MULTI_LINE_STRING}s
+// Historique:
+//    cree le 18/01/2023
+class H {
+    int f;
+    void F(int x) asm (true) ;
+}

@@ -1,0 +1,13 @@
+// Description:
+//    Programme avec add simple de floats
+// Resultats:
+//    2.06245e+01
+//
+// Historique:
+//    cree le 3/1/2024
+
+{
+    float x = 3.46 + 5.056;
+    float y = 2.0 + 3.564 + 6.5445;
+    print(x + y);
+}

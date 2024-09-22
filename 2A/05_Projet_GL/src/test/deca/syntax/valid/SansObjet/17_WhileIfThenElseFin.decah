@@ -1,0 +1,12 @@
+} else if(x < 2){
+            println("je suis dans else if01");
+            f=true;
+            x = x-1;
+        }
+        else{
+            println("je suis dans else");
+        }
+        x = x+ 3%2;
+    }
+
+}   

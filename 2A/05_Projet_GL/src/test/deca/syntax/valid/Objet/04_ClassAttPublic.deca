@@ -1,0 +1,11 @@
+// Description:
+//    Programme definir une class avec plusieurs champs certains initialisé et d'autres non
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+class A {
+    int x,y ;
+    float t=0.5, z = 0xf;
+}

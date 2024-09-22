@@ -1,0 +1,12 @@
+// Description :
+//      affécatation de unray Minus devant float dans un int  
+// Resultats :
+//    Erreur Contexteulle : ligne 11 :  le float ne peut pas être affecté à int
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    int i ;
+    i = - 12.14 ;
+}

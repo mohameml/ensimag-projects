@@ -1,0 +1,22 @@
+// Description :
+//     Test sur convfloat avec toutes les comparaisons 
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 12/01/2024
+
+{
+    1.2 > 3 ;
+
+    1.2 < 3 ;
+
+    1.2 == 3 ;
+
+    1.2 != 3 ;
+    
+    1.2 >=  3 ;
+    
+    1.2 <= 3 ;
+
+}

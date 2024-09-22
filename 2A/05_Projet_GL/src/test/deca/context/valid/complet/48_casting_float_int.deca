@@ -1,0 +1,11 @@
+// Description :
+// Test valide contextulle
+// Resultats :
+//    Arbre avec décoration 
+// Historique : 
+//  cree le 18/01/2024
+
+{
+    float f = 1.2;
+    int i =(int)(f);
+}

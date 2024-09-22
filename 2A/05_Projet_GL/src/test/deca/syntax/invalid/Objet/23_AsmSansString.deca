@@ -1,0 +1,10 @@
+// Description:
+//    Programme mal utilisantion de asm sans string
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:20: mismatched input ';' expecting '('
+// Historique:
+//    cree le 17/01/2023
+class AB {
+    protected boolean f;
+    void getF() asm () ;
+}

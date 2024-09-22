@@ -1,0 +1,12 @@
+// Description :
+//  test , sur l'opération and (&&).
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 10/01/2024
+
+
+{
+    boolean b = true && false ;
+}

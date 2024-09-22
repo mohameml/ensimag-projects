@@ -1,0 +1,25 @@
+// Description:
+//    Programme avec méthodes ayant des params.
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2;
+    void k(boolean p, int y, float e){
+        p;
+        y;
+        e;
+    }
+}
+
+class B{
+    A a;
+    protected A c;
+    void l(int w, float v, int n){
+        w;
+        v;
+        n;
+    }
+}

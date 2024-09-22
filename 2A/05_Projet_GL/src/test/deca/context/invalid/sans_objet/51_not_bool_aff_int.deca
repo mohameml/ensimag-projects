@@ -1,0 +1,12 @@
+// Description :
+//     affécatation du  Not ! devant boolean dans int  
+// Resultats :
+//    Erreur Contexteulle : ligne 11 : l'opération Not ! devant string n'est pas valide
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    int x ; 
+    x = !true ;
+}

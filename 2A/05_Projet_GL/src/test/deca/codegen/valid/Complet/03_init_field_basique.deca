@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec declaration de fields avec valeurs
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2;
+    float y = 2.434;
+    boolean z = true;
+}

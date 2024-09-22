@@ -1,0 +1,9 @@
+// Description:
+//    tests de programme incorrect bloc n'est pas commnecé par {
+//
+// Resultats:
+//    ligne 9 : Erreur, no viable alternative at input '"hello"'
+//
+// Historique:
+//    cree le 09/01/2024
+"hello";}

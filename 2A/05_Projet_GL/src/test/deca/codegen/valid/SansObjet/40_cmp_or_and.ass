@@ -1,0 +1,169 @@
+	TSTO #5
+	ADDSP #15
+; start main program
+	BOV pile_pleine
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Main program
+; Beginning of main instructions:
+	LOAD #5, R2
+	STORE R2, 3(GB)
+	LOAD #10, R2
+	STORE R2, 4(GB)
+	LOAD #3, R2
+	STORE R2, 5(GB)
+	LOAD #7, R2
+	STORE R2, 6(GB)
+	LOAD #12, R2
+	STORE R2, 7(GB)
+	LOAD #3, R2
+	STORE R2, 8(GB)
+	LOAD #0, R2
+	STORE R2, 9(GB)
+	LOAD #8, R2
+	STORE R2, 10(GB)
+	LOAD #4, R2
+	STORE R2, 11(GB)
+	LOAD #2, R2
+	STORE R2, 12(GB)
+	LOAD #5, R2
+	STORE R2, 13(GB)
+	LOAD #10, R2
+	STORE R2, 14(GB)
+	LOAD #15, R2
+	STORE R2, 15(GB)
+	LOAD 3(GB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BLE E_Fin.1
+	LOAD 4(GB), R3
+	LOAD #0, R4
+	CMP R4, R3
+	BGT E_Fin.0
+E_Fin.1:
+	LOAD 5(GB), R4
+	LOAD #0, R5
+	CMP R5, R4
+	BLT etiq_else.0
+E_Fin.0:
+	WSTR "OK1"
+	WNL
+	BRA etiq_fin.0
+etiq_else.0:
+etiq_fin.0:
+	LOAD 6(GB), R2
+	LOAD 7(GB), R3
+	CMP R3, R2
+	BGT E_Fin.2
+	LOAD 8(GB), R3
+	LOAD 9(GB), R4
+	CMP R4, R3
+	BLE etiq_else.1
+E_Fin.2:
+	LOAD 7(GB), R4
+	LOAD 8(GB), R5
+	CMP R5, R4
+	BLE etiq_else.1
+	LOAD 9(GB), R5
+	LOAD 6(GB), R6
+	CMP R6, R5
+	BGE etiq_else.1
+	WSTR "OK2"
+	WNL
+	BRA etiq_fin.1
+etiq_else.1:
+etiq_fin.1:
+	LOAD 10(GB), R2
+	LOAD 11(GB), R3
+	CMP R3, R2
+	BLT E_Fin.4
+	LOAD 11(GB), R3
+	LOAD 12(GB), R4
+	CMP R4, R3
+	BGE E_Fin.3
+E_Fin.4:
+	LOAD 10(GB), R4
+	LOAD 11(GB), R5
+	CMP R5, R4
+	BLT etiq_else.2
+	LOAD 12(GB), R5
+	LOAD #0, R6
+	CMP R6, R5
+	BLE etiq_else.2
+E_Fin.3:
+	WSTR "OK3"
+	WNL
+	BRA etiq_fin.2
+etiq_else.2:
+etiq_fin.2:
+	LOAD 13(GB), R2
+	LOAD 14(GB), R3
+	CMP R3, R2
+	BGT E_Fin.5
+	LOAD 14(GB), R3
+	LOAD 15(GB), R4
+	CMP R4, R3
+	BGT etiq_else.3
+	LOAD 13(GB), R4
+	LOAD #0, R5
+	CMP R5, R4
+	BLE etiq_else.3
+E_Fin.5:
+	LOAD 13(GB), R5
+	LOAD 14(GB), R6
+	CMP R6, R5
+	BNE E_Fin.6
+	LOAD 15(GB), R6
+	LOAD 14(GB), R7
+	CMP R7, R6
+	BGT etiq_else.3
+E_Fin.6:
+	WSTR "OK4"
+	WNL
+	BRA etiq_fin.3
+etiq_else.3:
+etiq_fin.3:
+	HALT
+pile_pleine:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+tas_plein:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+Division_par_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+Debordement_arithmetique:
+	WSTR "Erreur : calcul arithmetique debordant"
+	WNL
+	ERROR
+Modulo_zero:
+	WSTR "Erreur : Reste de la division entière par 0"
+	WNL
+	ERROR
+Max_variable_temp:
+	WSTR "Erreur : L'expression de l'expression fait recours à trop de variables temporaires"
+	WNL
+	ERROR
+; -----------------------------------------------
+;                    Classe Object
+; -----------------------------------------------
+code.Object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; end main program

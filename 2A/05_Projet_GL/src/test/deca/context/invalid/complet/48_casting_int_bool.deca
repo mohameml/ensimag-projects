@@ -1,0 +1,10 @@
+// Description :
+//   casting : int -> boolean
+// Resultats :
+//    ligne 9 :  casting entre 'boolean' et 'int' n'est pas possible
+// Historique :
+//  cree le 16/01/2024
+
+{
+    (boolean)(1);
+}

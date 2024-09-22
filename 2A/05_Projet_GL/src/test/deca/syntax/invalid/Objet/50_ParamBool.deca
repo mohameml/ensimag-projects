@@ -1,0 +1,13 @@
+// Description:
+//    Programme utilsant de paramètre true au lieu de ident
+// Resultats:
+//      Programme incorrecte syntaxiquement :9:22: mismatched input 'true' expecting IDENT
+// Historique:
+//    cree le 19/01/2023
+class A extends nB {
+    protected boolean x;
+    void setX(boolean true)
+    {
+        this.x = true;
+    }
+}

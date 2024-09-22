@@ -1,0 +1,24 @@
+// Description:
+//    tests de programme correct, declaration de plusieurs avec et sans initialisation.
+//      puis opération (+,-,*,/,%) entre les variables
+//
+// Resultats:
+//    programme correct.
+//
+// Historique:
+//    cree le 09/01/2024
+{   
+    
+    int x,y,z =3 ;
+    float a = 2.5,b =3.5 ,c;
+    boolean d = true ,e;
+    x =2;
+    y = x + z;
+    c = a-b;
+    e = false;
+    x = x*y;
+    y = y/x;
+    z = z%x;
+
+
+}

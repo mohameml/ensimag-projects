@@ -1,0 +1,12 @@
+// Description:
+//    Programme print multi_line
+//
+// Resultats:
+//    Erreur syntaxique :10:10: extraneous input '"Hello \n    world"' expecting ')'
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print("Hello 
+    world");
+}

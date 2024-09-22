@@ -1,0 +1,11 @@
+// Description :
+//    affecte une chaîne de caractère dans un int
+// Resultats :
+//    Erreur Contexteulle : fichier.deca:10:12:le string ne peut pas être affecté à int
+//
+// Historique :
+// cree le 09/01/2024
+
+{
+    int a = "bonjour";
+}

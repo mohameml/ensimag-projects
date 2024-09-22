@@ -1,0 +1,34 @@
+// Description:
+//    Programme : utilisation des divers comparaison dans  des if appellés dans une mthode
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 20/01/2024
+class A {
+    int x,y;
+    boolean f,t;
+
+    void set(int x, int y, boolean f,  boolean t){
+        if(x==y && f == t)
+        {
+            this.x = x;
+            this.y = x;
+            this.f = f;
+            this.t = f;
+        } else if( x != y || f != t){
+            if(x==y && f != t) {
+            this.x = x;
+            this.y = x;
+            this.f = f;
+            this.t = t;
+
+            } else if(x !=y && f == t) {
+            this.x = x;
+            this.y = y;
+            this.f = f;
+            this.t = f;
+            } 
+        }
+    }
+}

@@ -1,0 +1,11 @@
+// Description :
+//     affécatation flaot dans un boolean 
+// Resultats :
+//    Erreur Contexteulle : ligne 10 : le float ne peut pas être affecté à boolean
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    boolean b = 12.34;
+}

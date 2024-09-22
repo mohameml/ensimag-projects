@@ -1,0 +1,11 @@
+// Description :
+//     passer vois à println
+// Resultats :
+//    Erreur Contexteulle : ligne 10 : void identificateur non déclaré
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    println(void);
+}

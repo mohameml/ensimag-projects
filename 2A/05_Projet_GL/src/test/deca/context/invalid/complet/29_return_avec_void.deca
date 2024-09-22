@@ -1,0 +1,13 @@
+// Description :
+//    return avce void 
+// Resultats :
+//    ligne 14 : le type attendu doit étre différent de void
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int x ;
+    void getX() {
+        return x ; 
+    }
+}

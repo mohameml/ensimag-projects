@@ -1,0 +1,12 @@
+// Description :
+//      affécation de la mult entre float et int dans un boolean  
+// Resultats :
+//    Erreur Contexteulle : ligne 11 : le float ne peut pas être affecté à boolean
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    boolean b ;
+    b = 1*1.5 ;
+}

@@ -1,0 +1,21 @@
+// Description:
+//    Programme  if dont la condition est un boolean, un else puis un if .
+//
+// Resultats:
+//      programme correcte syntaxiquement 
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    int x=0;
+    if(true)
+    {
+        print("je suis dans if");
+    }else{
+        print("hello");
+    }
+    if(x ==0)
+    {
+        x = x+1;
+    }
+}

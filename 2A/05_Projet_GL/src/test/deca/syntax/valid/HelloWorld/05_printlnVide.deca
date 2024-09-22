@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec println rien.
+// Resultats:
+//    affiche rien
+//
+// Historique:
+//    cree le 21/12/2023
+
+
+{
+    println();
+}

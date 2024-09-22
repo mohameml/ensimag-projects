@@ -1,0 +1,10 @@
+// Description:
+//    Programme mal utilisantion de asm sans le mot clé 'asm'
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:16: mismatched input '(' expecting {'{', 'asm'}
+// Historique:
+//    cree le 17/01/2023
+class A extends B {
+    protected boolean f,t;
+    void getF() ("hello");
+}

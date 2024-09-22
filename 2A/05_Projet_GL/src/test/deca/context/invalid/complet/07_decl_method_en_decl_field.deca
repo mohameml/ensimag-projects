@@ -1,0 +1,17 @@
+// Description :
+//     une rédefinition du methode en tant que champ 
+// Resultats :
+//    une rédefinition inacceptable du get en tant que champ 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int get()
+    {
+
+    }
+}
+
+class B extends A  {
+    int get ;
+}

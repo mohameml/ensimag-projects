@@ -1,0 +1,18 @@
+// Description :
+//     duplication du Decl Methode 
+// Resultats :
+//    ligne 14 : get deja déclarée
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int get()
+    {
+
+    }
+
+    boolean get()
+    {
+        
+    }
+}

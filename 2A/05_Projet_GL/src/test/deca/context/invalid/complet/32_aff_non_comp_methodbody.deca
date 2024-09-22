@@ -1,0 +1,15 @@
+// Description :
+//    afféctation float dasn int  dans  MethodBody 
+// Resultats :
+//    ligne 12 : le float ne peut pas être affecté à int 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    float  f ;
+
+    int getX() {
+        int x  = f ; 
+    }
+
+}

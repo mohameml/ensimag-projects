@@ -1,0 +1,13 @@
+// Description :
+//   return string au leiu un boolean 
+// Resultats :
+//    ligne 10 : le string ne peut pas être affecté à boolean
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    boolean b ; 
+    boolean getBool() {
+        return "bonjour" ; 
+    }
+}

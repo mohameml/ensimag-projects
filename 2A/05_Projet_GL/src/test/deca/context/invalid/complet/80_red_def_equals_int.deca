@@ -1,0 +1,16 @@
+// Description :
+//  une rédefinition du methode equals dans un sous sous classe 
+// Resultats :
+//    ligne 13 : le int n'est pas un sous type du boolean
+// Historique : 
+//  cree le 16/01/2024
+
+class A {
+
+}
+
+class B extends A {
+    int equals(Object o) {
+        
+    }
+}

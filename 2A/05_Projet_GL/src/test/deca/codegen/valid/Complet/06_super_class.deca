@@ -1,0 +1,14 @@
+// Description:
+//    Programme avec declaration de classes qui s'extend sans fields
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    
+}
+
+class B extends A{
+
+}

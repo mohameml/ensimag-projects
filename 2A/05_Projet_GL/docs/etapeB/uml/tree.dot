@@ -1,0 +1,116 @@
+digraph G {
+
+    Program  -> ListDeclaClass 
+    Program -> Main
+
+    Main -> EmptyMain [color = blue] 
+    Main -> main [color = blue] 
+
+    main -> List_Decl_Var
+    main -> List_INST
+
+
+    ListDeclaClass -> Decl_Class
+
+    // Decl_Class -> DeclClass
+    Decl_Class -> IDENTIFIER 
+    Decl_Class -> List_Decl_FIELD 
+    Decl_Class -> List_Decl_METHODE 
+
+    List_Decl_METHODE -> Decl_METHODE 
+
+    // Decl_METHODE  -> DeclMethode
+    Decl_METHODE  -> IDENTIFIER
+    Decl_METHODE  -> IDENTIFIER
+    Decl_METHODE  -> List_Decl_Param
+    Decl_METHODE  -> METHOD_BODY
+
+    List_Decl_FIELD -> Decl_FIELD 
+
+    // Decl_FIELD -> DeclField
+    Decl_FIELD -> IDENTIFIER
+    Decl_FIELD -> IDENTIFIER
+    Decl_FIELD -> INITIALIZATION 
+
+    List_Decl_Param -> Decl_Param
+
+    // Decl_Param -> Decl_Param
+    // Decl_Param -> DeclParam
+    Decl_Param -> IDENTIFIER
+    Decl_Param -> IDENTIFIER
+
+    METHOD_BODY -> MethodeAsmBody [color = blue] 
+    METHOD_BODY -> MethodeBody [color = blue] 
+
+    MethodeAsmBody -> STRING_LITERAL 
+
+    MethodeBody -> List_Decl_Var 
+    MethodeBody -> List_INST
+    
+    List_Decl_Var -> Decl_VAR 
+    
+    Decl_VAR -> IDENTIFIER
+    Decl_VAR -> IDENTIFIER
+    Decl_VAR -> INITIALIZATION
+    
+    List_INST -> INST
+
+    INST -> EXPR [color = blue] 
+    INST -> PRINT [color = blue] 
+    INST -> IfThenElse [color = blue] 
+    INST -> NoOperation [color = blue] 
+    INST -> Return [color = blue] 
+    INST -> While [color = blue]
+
+
+    PRINT -> print [color = blue] 
+    PRINT -> println [color = blue]
+
+
+    EXPR -> BINARY_EXPR  [color = blue]
+    EXPR -> LVALUE [color = blue]
+    EXPR -> READ_EXPR [color = blue]
+    EXPR -> STRING_LITERAL [color = blue]
+    EXPR -> UNARY_EXPR [color = blue]
+    EXPR -> BooleanLiteral [color = blue]
+    EXPR -> Cast_IDENTIFIER_EXPR [color = blue]
+    EXPR -> FloatLiteral [color = blue]
+    EXPR -> InstanceOf  [color = blue]
+    EXPR -> IntLiteral [color = blue] 
+    EXPR -> MethodCall [color = blue] 
+    EXPR -> New [color = blue]
+    EXPR -> Null [color = blue]
+    EXPR -> This [color = blue]
+
+
+
+    BINARY_EXPR -> OP_ARITH [color = blue] 
+    BINARY_EXPR -> OP_BOOL [color = blue] 
+    BINARY_EXPR -> OP_CMP [color = blue] 
+    BINARY_EXPR -> Assign_LVALUE_EXPR [color = blue] 
+
+    UNARY_EXPR -> ConvFloat_EXPR
+    UNARY_EXPR -> Not_EXPR 
+    UNARY_EXPR -> UnaryMinus_EXPR
+
+
+
+
+
+    
+    LVALUE -> IDENTIFIER [color = blue]
+    LVALUE -> Selection [color = blue]
+
+    Selection ->  EXPR 
+    Selection -> IDENTIFIER
+
+    
+    READ_EXPR -> ReadFloat [color = blue]
+    READ_EXPR -> ReadInt [color = blue]
+
+
+
+    INITIALIZATION -> initialisation_EXPR [color = blue] 
+    INITIALIZATION -> Noinitialisation  [color = blue]
+
+}

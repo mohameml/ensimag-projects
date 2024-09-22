@@ -1,0 +1,14 @@
+// Description:
+//    Programme avec entiers relatifs
+// Resultats:
+//    -2.03500e+00
+//    -0x1.6p+2
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    float a = -5.5, b = 5.7, c = -2.235;
+    println(a+b+c);
+    printx(a);
+}

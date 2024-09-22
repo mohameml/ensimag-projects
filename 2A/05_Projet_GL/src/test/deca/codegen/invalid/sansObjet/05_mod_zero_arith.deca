@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec modulo par 0 calculé
+// Resultats:
+//    Erreur : Reste de la division entière par 0
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int x = 5 % (4-4);
+    println(x);
+}

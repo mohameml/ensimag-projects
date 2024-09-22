@@ -1,0 +1,13 @@
+// Description:
+//    Programme utilsant de paramètre int au lieu de ident
+// Resultats:
+//      Programme incorrecte syntaxiquement :9:18: mismatched input '2' expecting IDENT
+// Historique:
+//    cree le 19/01/2023
+class A {
+    int x;
+    void setX(int 2)
+    {
+        this.x = x;
+    }
+}

@@ -1,0 +1,20 @@
+@startuml
+'solde insuffisant
+Participant "Client" as C
+Participant "controle" as co
+Participant "user" as U
+
+hide footbox
+
+C -> co : acheter(nombre, Action)
+activate co
+
+co -> U : VerificationSolde(prix_total)
+activate U
+
+U --> co : solde insuffisant
+deactivate U
+
+co --> C : erreur : solde insuffisant
+
+@enduml

@@ -1,0 +1,20 @@
+// Description:
+//    Programme definir une class avec plusieurs differtns champs avec deux methode qui retournent deux types differents
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+class A {
+    protected int val;
+    boolean y;
+    int setVal(int a, boolean y){
+        this.val = a;
+        this.y = y;
+    }
+
+    boolean getOppVal()
+    {
+        return !y;
+    }
+}

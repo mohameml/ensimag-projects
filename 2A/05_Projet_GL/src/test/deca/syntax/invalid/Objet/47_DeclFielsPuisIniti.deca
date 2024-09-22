@@ -1,0 +1,10 @@
+// Description:
+//    Programme initialisation d'un champ dans la classe.
+// Resultats:
+//      Programme incorrecte syntaxiquement :9:6: no viable alternative at input 'x='
+// Historique:
+//    cree le 19/01/2023
+class A {
+    protected int x;
+    x = 3;
+}

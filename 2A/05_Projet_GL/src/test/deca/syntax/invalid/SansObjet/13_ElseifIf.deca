@@ -1,0 +1,17 @@
+// Description:
+//    tests de programme qui commence par elseif pui else
+// Resultats:
+//    ligne 11  :  mismatched input 'else'
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    int x=2;
+   
+    else if( x !=2)
+    {
+        print("je suis elsif");
+    }else{
+        print("je suis dans else");
+    }
+}

@@ -1,0 +1,61 @@
+@startuml conception
+
+
+
+class dashbordUser  {
+    private BarMenu Menu  
+    private InfoSide info 
+    private Table table 
+
+}
+
+
+' extends JMenuBar implements MouseListener
+
+class BarMenu  {
+    JMenu acheterMenu
+    JMenu vendreMenu
+    JMenu consulterMenu 
+    JMenu simulerMenu 
+    JMenu helpMenu
+}
+
+
+class Table  {
+    
+    private Object[][] data 
+    private String[] colnames 
+    private JTable table 
+
+    public  Object[][] getData() 
+    public  String[] getColnames() 
+
+}
+
+
+class InfoSide  {
+
+    JLabel labelName ;
+    JLabel labelSolde ; 
+
+}
+
+
+
+dashbordUser --> JFrame 
+
+
+
+
+BarMenu --> JMenuBar
+BarMenu --* dashbordUser
+
+
+Table --> JPanel 
+Table --* dashbordUser
+
+
+InfoSide --> JPanel
+InfoSide --* dashbordUser
+
+@enduml

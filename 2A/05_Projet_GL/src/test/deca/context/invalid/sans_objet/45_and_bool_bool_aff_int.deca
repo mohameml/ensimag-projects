@@ -1,0 +1,12 @@
+// Description :
+//      affécation d'une comparasion dans un int  
+// Resultats :
+//    Erreur Contexteulle : ligne 11 : le boolean ne peut pas être affecté à int
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    int x ;
+    x = true && true;
+}

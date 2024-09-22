@@ -1,0 +1,11 @@
+// Description:
+//    tests de programme print sans "(" même test pour println, printx, printlnx
+//
+// Resultats:
+//    ligne 10  : Erreur,  missing '(' at '"hello"'
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    print"hello");
+}

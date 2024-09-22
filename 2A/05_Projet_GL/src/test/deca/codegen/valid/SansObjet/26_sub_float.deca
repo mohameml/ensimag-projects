@@ -1,0 +1,13 @@
+// Description:
+//    Programme avec soustraction des flottants
+// Resultats:
+//    1.13193e+04
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    float x = 2.464 - 53.441 - 56.5 - 4545.2;
+    float y = 6666.66;
+    print(y-x);
+}

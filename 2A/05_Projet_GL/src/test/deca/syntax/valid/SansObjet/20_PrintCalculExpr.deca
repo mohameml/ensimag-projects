@@ -1,0 +1,10 @@
+// Description:
+//    Programme  print une expression, un calcul 
+// Resultats:
+//      programme correcte syntaxiquement, invalide contextuellement
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    print(x+y*z);  
+}

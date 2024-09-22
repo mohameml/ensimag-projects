@@ -1,0 +1,11 @@
+// Description:
+//    Programme avec \ non protégé.
+//
+// Resultats:
+//    Erreur syntaxique :10:10: token recognition error at: '"Hello \");\n}', on considère que la chaine n'est pas terminè même après }.
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print("Hello \");
+}

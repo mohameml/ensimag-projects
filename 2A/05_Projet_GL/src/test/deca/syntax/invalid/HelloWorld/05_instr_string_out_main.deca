@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec un string hors le bloc de main.
+// Resultats:
+//    Erreur syntaxique : 12:0: mismatched input '"HelloWorld"' .
+//
+// Historique:
+//    cree le 20/12/2023
+
+{
+        
+}
+"HelloWorld";

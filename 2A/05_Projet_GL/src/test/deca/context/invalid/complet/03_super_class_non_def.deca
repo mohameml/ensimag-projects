@@ -1,0 +1,10 @@
+// Description :
+//      super classe non definie 
+// Resultats :
+//    ligne 8 : classe E n'est paas definie
+// Historique :
+//  cree le 16/01/2024
+
+class A extends E {
+    
+}

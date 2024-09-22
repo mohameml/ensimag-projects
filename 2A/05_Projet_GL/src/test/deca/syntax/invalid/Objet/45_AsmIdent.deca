@@ -1,0 +1,12 @@
+// Description:
+//    Programme declaration d'un champ dans asm
+// Resultats:
+//      Programme incorrecte syntaxiquement :10:8: mismatched input 'int' expecting {STRING, MULTI_LINE_STRING}
+// Historique:
+//    cree le 19/01/2023
+class A {
+    int x;
+    void get() asm(
+        int x
+    );
+}

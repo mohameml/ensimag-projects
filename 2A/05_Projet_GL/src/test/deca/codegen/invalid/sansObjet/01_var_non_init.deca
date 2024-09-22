@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec accès à une variable non initialiser
+// Resultats:
+//    WINT avec RX indefini
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int x;
+    println(x);
+}

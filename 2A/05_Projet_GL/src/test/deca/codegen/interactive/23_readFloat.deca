@@ -1,0 +1,14 @@
+// Description:
+//    Programme avec un float lu
+// Resultats:
+//    inconnue, depend de l'utilisateur
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    float x;
+    println("Entrez un flottant");
+    x = readFloat();
+    println(x);
+}

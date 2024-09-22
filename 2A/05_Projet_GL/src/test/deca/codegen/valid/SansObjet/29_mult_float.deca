@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec multiplication de floats
+// Resultats:
+//    -4.92545e+03
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    float x = 2.54*3.652*-4.234*-5.3235*3.978*-5.922;
+    print(x);
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Programme sans ; en fin de ligne.
+//
+// Resultats:
+//    Erreur syntaxique : 12:0: missing ';' juste après print("HelloWorld")
+//
+// Historique:
+//    cree le 20/12/2023
+
+{
+    print("HelloWorld")
+}

@@ -1,0 +1,17 @@
+// Description :
+//    duplication du Decl param avce de type diff 
+// Resultats :
+//    ligne 14 : a est déjà déclarée
+// Historique :
+//  cree le 16/01/2024
+
+class B {
+
+}
+
+class A {
+
+    int get(int a , B a) {
+        
+    }
+}

@@ -1,0 +1,15 @@
+// Description :
+//   afféctation classe apr Object 
+// Resultats :
+//    ligne 14 : le Object ne peut pas être affecté à A
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    A a ; 
+
+    int init() {
+        Object o ;
+        this.a = o ;
+    }
+}

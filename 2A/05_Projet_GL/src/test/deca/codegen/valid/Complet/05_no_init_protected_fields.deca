@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec declaration de fields protégés
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    protected int x;
+    protected float y;
+    protected boolean z;
+}

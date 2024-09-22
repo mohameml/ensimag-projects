@@ -1,0 +1,16 @@
+// Description:
+//    Programme : initialisation d'un variable dans une methode
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 20/01/2024
+class A {
+    int x;
+    
+    int getZ(int y){
+        int z = x+y;
+        return z;
+    }
+    
+}

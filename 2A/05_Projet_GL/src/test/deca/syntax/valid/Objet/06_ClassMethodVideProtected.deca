@@ -1,0 +1,13 @@
+// Description:
+//    Programme definir une class avec un champs et une simple methode sans param et return un int
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+class A {
+    protected int val;
+    int getVal(){
+        return a;
+    }
+}

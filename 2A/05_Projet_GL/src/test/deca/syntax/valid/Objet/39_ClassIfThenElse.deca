@@ -1,0 +1,21 @@
+// Description:
+//    Programme : utilisation de ifThenElse dans la definition d'une methode
+// Resultats:
+//      Programme correcte, incorrecte contextuellement car la methode  n'est pas predefinie 
+//
+// Historique:
+//    cree le 19/01/2024
+class A extends B {
+    protected float x,y;
+    
+    float getMax(){
+        if(x < y)
+        {
+            return y;
+        } else if (y < x){
+            return x;
+        }else {
+           return x;
+       }
+    }
+}

@@ -1,0 +1,18 @@
+// Description:
+//    Programme mal déclaration, mal écriture du mot new
+// Resultats:
+//      Programme incorrecte syntaxiquement :16:15: no viable alternative at input 'A'
+// Historique:
+//    cree le 18/01/2023
+class A {
+    protected int x;
+    int getX()
+    {
+        return x;
+    }
+}
+
+{
+    A a = neww A(); 
+   
+}

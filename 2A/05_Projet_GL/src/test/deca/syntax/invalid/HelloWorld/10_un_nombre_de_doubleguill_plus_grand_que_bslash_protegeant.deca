@@ -1,0 +1,11 @@
+// Description:
+//    Programme avec un nombre de " plus grand que le \ protégeant  
+//
+// Resultats:
+//    Erreur syntaxique :10:21: token recognition error at: '");\n}', le dernier " n'est pas protégé
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print("Hello \"" ");
+}

@@ -1,0 +1,11 @@
+// Description:
+//    Programme : utilisation de return out of method
+// Resultats:
+//      Programme correcte sytaxiquement , incorrecte contextuellement car return est reservé pour une methode
+//
+// Historique:
+//    cree le 19/01/2024
+{
+    int x;
+    return x;
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec multiplication d'entiers
+// Resultats:
+//    1800
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int x = 2*3*4*5*3*5;
+    print(x);
+}

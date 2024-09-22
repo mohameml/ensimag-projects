@@ -1,0 +1,11 @@
+// Description:
+//    Programme avec multiplication simple des floats
+// Resultats:
+//    Valide 
+//
+// Historique:
+//    cree le 3/1/2024
+
+{
+    float f = 1.3*2.1;
+}

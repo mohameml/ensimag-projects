@@ -1,0 +1,12 @@
+// Description :
+//    redefinition invalide de la méthode equals du Object 
+// Resultats :
+//    ligne 9 : le int n'est pas un sous type du boolean   
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int equals(Object o ) {
+
+    }
+}

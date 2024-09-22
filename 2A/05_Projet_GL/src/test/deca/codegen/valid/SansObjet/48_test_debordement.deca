@@ -1,0 +1,13 @@
+// Description:
+//    Debordement lors de calcul arithmetique sur flottants
+// Resultats:
+//    "Erreur : calcul arithmetique debordant"
+// Historique:
+//    cree le 13/1/2024
+
+
+{
+    float a = 429496729;
+    float b = 429496729.0;
+    print(a * b);
+}

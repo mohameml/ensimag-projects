@@ -1,0 +1,16 @@
+// Description :
+//   this avce une Methode  qui n'existe pas 
+// Resultats :
+//    ligne 12 : ge identificateur non déclaré
+// Historique :
+//  cree le 18/01/2024
+
+class A {
+    void get() {
+    }
+
+    void db() {
+        this.ge();
+    }
+    
+}

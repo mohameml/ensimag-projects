@@ -1,0 +1,19 @@
+// Description:
+//    Programme avec not
+// Resultats:
+//    OK1
+//    OK2
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int a = 2, b=3;
+    boolean f = false;
+    if (!f){
+        println("OK1");
+    }
+    if (!(a>=b)){
+        println("OK2");
+    }
+}

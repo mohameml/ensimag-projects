@@ -1,0 +1,15 @@
+// Description:
+//    Programme affichage des entiers
+// Resultats:
+//    2020
+//    2020
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    print(20);
+    println(20);
+    printx(20);
+    printlnx(20);
+}

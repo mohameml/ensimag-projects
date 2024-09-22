@@ -1,0 +1,58 @@
+	TSTO #5
+	ADDSP #5
+; start main program
+	BOV pile_pleine
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Main program
+; Beginning of main instructions:
+	LOAD #2, R3
+	STORE R3, 3(GB)
+	LOAD #0x1.266666p2, R3
+	STORE R3, 4(GB)
+	LOAD #1, R3
+	STORE R3, 5(GB)
+	HALT
+pile_pleine:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+tas_plein:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+Division_par_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+Debordement_arithmetique:
+	WSTR "Erreur : calcul arithmetique debordant"
+	WNL
+	ERROR
+Modulo_zero:
+	WSTR "Erreur : Reste de la division entière par 0"
+	WNL
+	ERROR
+Max_variable_temp:
+	WSTR "Erreur : L'expression de l'expression fait recours à trop de variables temporaires"
+	WNL
+	ERROR
+; -----------------------------------------------
+;                    Classe Object
+; -----------------------------------------------
+code.Object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; end main program

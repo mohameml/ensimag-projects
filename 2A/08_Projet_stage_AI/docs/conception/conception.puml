@@ -1,0 +1,135 @@
+@startuml conception
+
+
+
+package user {
+
+    class User {
+        - String username 
+        - String password 
+        + void connecter()
+        + void inscrire()
+    }
+
+    class Profil {
+        - String nom 
+        - String prenom 
+        - String email 
+        - String motDePasse
+        + void afficherProfil()
+        + void modifierProfil()
+
+    }
+
+
+
+}
+
+package DonnesSante {
+
+    class Sante {
+        - String nom 
+        - float seuil 
+
+    }
+
+    class MesureSante {
+        - String id 
+        - Date dateDeMesure 
+        - float mesure
+        + collecter()
+        + envoyer()
+        + afficher()
+
+    }
+
+    Sante "1..1" *-- "1..*" MesureSante
+
+}
+
+
+
+
+package NotificationUser {
+
+
+    abstract class AbstractNotif {
+
+        - String id 
+        - String type 
+        - String message 
+    }
+
+    class Notification {
+        - Date dateNotif
+        + void envoyer()
+        + void afficher()
+    }
+
+    class Alerte {
+
+        - float seuilAlerte 
+        + void configurer()
+        + void envoyer()
+    }
+
+    AbstractNotif <|-- Alerte
+    AbstractNotif <|-- Notification
+
+
+
+}
+
+
+
+
+
+package ConnexionAvceBluettoth {
+
+    class BluetoothManager  {
+        - Array<Device> devices
+        - Device connectedDevice
+        +  void scanForDevices()
+        + void connectToDevice(device: Device)
+        + void disconnectDevice(()
+    }
+
+    class Device {
+        - String id 
+        - String name 
+        - String rssi 
+        + void getServices()
+    }
+
+    class Connection {
+        - Device device
+        - Boolean status
+        + void readCharacteristic()
+
+    }
+
+
+
+    ' BluetoothManager "1..*" -- Device
+    Connection  -- Device
+    BluetoothManager -- Connection
+
+}
+
+
+
+
+
+
+User "1" *-- "1" Profil
+MesureSante -- BluetoothManager
+Alerte -- Notification
+
+AbstractNotif -- Sante
+AbstractNotif -- User
+
+MesureSante -- User
+
+
+
+@enduml

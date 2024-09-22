@@ -1,0 +1,492 @@
+	ADDSP #18
+; start main program
+	BOV pile_pleine
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table de méthodes de la classe Madou
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Madou.madou, R0
+	STORE R0, 5(GB)
+; Code de la table de méthodes de la classe A
+	LEA 1(GB), R0
+	STORE R0, 6(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 7(GB)
+	LOAD code.A.m, R0
+	STORE R0, 8(GB)
+; Code de la table de méthodes de la classe BetweenAB
+	LEA 1(GB), R0
+	STORE R0, 9(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 10(GB)
+	LOAD code.BetweenAB.between, R0
+	STORE R0, 11(GB)
+; Code de la table de méthodes de la classe B
+	LEA 6(GB), R0
+	STORE R0, 12(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 13(GB)
+	LOAD code.A.m, R0
+	STORE R0, 14(GB)
+	LOAD code.B.b, R0
+	STORE R0, 15(GB)
+; Code de la table de méthodes de la classe Noparent
+	LEA 1(GB), R0
+	STORE R0, 16(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 17(GB)
+	LOAD code.Noparent.noParent, R0
+	STORE R0, 18(GB)
+; Empty Main :
+	HALT
+pile_pleine:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+tas_plein:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+Division_par_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+Debordement_arithmetique:
+	WSTR "Erreur : calcul arithmetique debordant"
+	WNL
+	ERROR
+Modulo_zero:
+	WSTR "Erreur : Reste de la division entière par 0"
+	WNL
+	ERROR
+Max_variable_temp:
+	WSTR "Erreur : L'expression de l'expression fait recours à trop de variables temporaires"
+	WNL
+	ERROR
+; -----------------------------------------------
+;                    Classe Object
+; -----------------------------------------------
+code.Object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; ---------------------------------------------------------
+;                  Classe Madou
+; ---------------------------------------------------------
+; ------- Initialisation des champs de Madou
+init.Madou:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; Code des méthodes de la classeMadou
+code.Madou.madou:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	BRA fin.code.Madou.madou
+	WSTR "Erreur : sortie de la methode code.Madou.madou sans return"
+	WNL
+	ERROR
+fin.code.Madou.madou:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; ---------------------------------------------------------
+;                  Classe A
+; ---------------------------------------------------------
+; ------- Initialisation des champs de A
+init.A:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #7, R2
+	LOAD -2(LB), R3
+	STORE R2, 1(R3)
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; Code des méthodes de la classeA
+code.A.m:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -3(LB), R2
+	LOAD -4(LB), R3
+	ADD R2, R3
+	LOAD -2(LB), R4
+	LOAD 1(R4), R4
+	ADD R3, R4
+	LOAD R4, R0
+	BRA fin.code.A.m
+	WSTR "Erreur : sortie de la methode code.A.m sans return"
+	WNL
+	ERROR
+fin.code.A.m:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; ---------------------------------------------------------
+;                  Classe BetweenAB
+; ---------------------------------------------------------
+; ------- Initialisation des champs de BetweenAB
+init.BetweenAB:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; Code des méthodes de la classeBetweenAB
+code.BetweenAB.between:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	BRA fin.code.BetweenAB.between
+	WSTR "Erreur : sortie de la methode code.BetweenAB.between sans return"
+	WNL
+	ERROR
+fin.code.BetweenAB.between:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; ---------------------------------------------------------
+;                  Classe B
+; ---------------------------------------------------------
+; ------- Initialisation des champs de B
+init.B:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Init des champs hérités
+	LOAD -2(LB), R2
+	PUSH R2
+	BSR init.A
+	SUBSP #1
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; Code des méthodes de la classeB
+code.B.b:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	BRA fin.code.B.b
+	WSTR "Erreur : sortie de la methode code.B.b sans return"
+	WNL
+	ERROR
+fin.code.B.b:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; ---------------------------------------------------------
+;                  Classe Noparent
+; ---------------------------------------------------------
+; ------- Initialisation des champs de Noparent
+init.Noparent:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; Code des méthodes de la classeNoparent
+code.Noparent.noParent:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	BRA fin.code.Noparent.noParent
+	WSTR "Erreur : sortie de la methode code.Noparent.noParent sans return"
+	WNL
+	ERROR
+fin.code.Noparent.noParent:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; end main program

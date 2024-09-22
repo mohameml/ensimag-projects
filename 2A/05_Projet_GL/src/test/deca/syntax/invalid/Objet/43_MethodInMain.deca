@@ -1,0 +1,12 @@
+// Description:
+//    Programme definition d'une methode dans un classe
+// Resultats:
+//      Programme incorrecte syntaxiquement :9:12: missing ';' at '('
+// Historique:
+//    cree le 19/01/2023
+{
+    int x;
+    int getX(){
+        return x;
+    }
+}

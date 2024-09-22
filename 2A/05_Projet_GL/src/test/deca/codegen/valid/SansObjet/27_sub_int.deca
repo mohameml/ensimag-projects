@@ -1,0 +1,13 @@
+// Description:
+//    Programme avec soustraction des entiers
+// Resultats:
+//    -1934
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int x = 53 - 656 - 665;
+    int y = 666;
+    print(x-y);
+}

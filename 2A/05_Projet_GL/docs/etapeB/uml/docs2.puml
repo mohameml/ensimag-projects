@@ -1,0 +1,23 @@
+@startuml
+
+abstract class Tree {
+}
+
+abstract class AbstractDeclMethod {
+
+
+}
+
+class DeclMethod {
+
+    - AbstractIdentifier type ;
+    - AbstractIdentifier name;
+    - ListDeclParam params ;
+    - AbstractMethodBody body ;
+
+}
+
+DeclMethod --|> AbstractDeclMethod
+AbstractDeclMethod --|> Tree 
+
+@enduml

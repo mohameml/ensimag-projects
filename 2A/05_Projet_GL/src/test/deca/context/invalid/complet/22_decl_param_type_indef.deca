@@ -1,0 +1,13 @@
+// Description :
+//    decl Param avec type non definie 
+// Resultats :
+//    ligne 10 : identiﬁcateur de type non déclaré 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+    int get(String str) {
+        
+    }
+}

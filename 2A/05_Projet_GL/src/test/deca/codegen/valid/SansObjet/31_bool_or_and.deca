@@ -1,0 +1,40 @@
+// Description:
+//    Programme affichant le resultat
+//    d'une cmp de bool
+// Resultats:
+//    true
+//    true
+//    true
+//    true
+//    true
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    if (true){
+        println("true");
+    }
+    if (true == false){
+        println("false");
+    }
+    if ( true == true ){
+        printlnx("true");
+    }
+    if (true != false){
+        printlnx("true");
+    }
+    if (false==true || true==true){
+        println("true");
+    }
+    if ( true!=false && true!=true){
+        print("false");
+    }
+    if ( (false!=true || true==true) && ((false==true || true))){
+        println("true");
+    }
+    else{
+        print("false");
+    }
+
+}

@@ -1,0 +1,18 @@
+// Description :
+//    redefiniton d'une methode de sig différent 
+// Resultats :
+//    ligne 15 : une methode rédefine doit avoir la meme signature que la methode hertiée
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int add(int a , int b) {
+
+    }
+}
+
+class B extends A {
+    int add(int a) {
+        
+    }
+}

@@ -1,0 +1,12 @@
+// Description :
+//      opération plus entre int et string  
+// Resultats :
+//    Erreur Contexteulle : ligne 11 : l'opération + n'est pas possible entre 'int' et 'string'
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    int x ;
+    x = 1 + "bonjour";
+}

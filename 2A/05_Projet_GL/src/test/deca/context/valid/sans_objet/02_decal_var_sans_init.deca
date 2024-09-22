@@ -1,0 +1,15 @@
+// Description :
+//      déclaration des variables 
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 09/01/2024
+
+{
+    int x ;
+
+    float f ;
+
+    boolean b ;
+}

@@ -1,0 +1,22 @@
+// Description:
+//    Programme : utilisation de while
+// Resultats:
+//      Programme correcte, incorrecte contextuellement car la methode  n'est pas predefinie elle est definie après A 
+//
+// Historique:
+//    cree le 19/01/2024
+class A extends B {
+    protected float x,y;
+    
+    float getMax(){
+        while( x < y)
+        {
+            x = x+1;
+        }
+        return x;
+    }
+}
+
+class B {
+
+}

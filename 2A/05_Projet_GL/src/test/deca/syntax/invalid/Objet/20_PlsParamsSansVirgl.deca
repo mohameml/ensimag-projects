@@ -1,0 +1,13 @@
+// Description:
+//    Programme utilisation de plusieurs param non separés par des , paramétre boolean sans type
+// Resultats:
+//      Programme incorrecte syntaxiquement : 3:24: mismatched input 'boolean' expecting {',', ')'}
+// Historique:
+//    cree le 17/01/2023
+class A extends B {
+    protected boolean f,t;
+    void setF(boolean f boolean t){
+        this.f = f;
+        this.t = t;
+    }
+}

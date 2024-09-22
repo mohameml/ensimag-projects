@@ -1,0 +1,33 @@
+// Description:
+//    Programme avec des or et and contenant des cmp d'entiers
+// Resultats:
+//    OK1
+//    OK2
+//    OK3
+//    OK4
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int x = 5, y = 10, z = 3;
+    int a = 7, b = 12, c = 3, d = 0;
+    int p = 8, q = 4, r = 2;
+    int m = 5, n = 10, o = 15;
+
+    if ((x > 0 && y > 0) || z >= 0) {
+        println("OK1");
+    }
+
+    if ((a > b || c > d) && (b > c && d < a)) {
+        println("OK2");
+    }
+
+    if ((p >= q && q >= r) || (p >= q && r > 0)) {
+        println("OK3");
+    }
+
+    if ((m > n || (n <= o && m > 0)) && !(m == n && o > n)) {
+        println("OK4");
+    }
+}

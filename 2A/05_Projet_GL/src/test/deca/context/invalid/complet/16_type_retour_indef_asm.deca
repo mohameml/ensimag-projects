@@ -1,0 +1,15 @@
+// Description :
+//     type de retour indefine pour MethodAsmBody 
+// Resultats :
+//    ligne 11 : identificateur de type non déclaré 
+// Historique :
+//  cree le 16/01/2024
+
+
+
+class A{
+    B get() asm (
+        "bonjour"
+    );
+}
+

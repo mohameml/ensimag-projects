@@ -1,0 +1,15 @@
+// Description:
+//    tests de programme correct, utilisation des opBool (and et or)
+//
+// Resultats:
+//    programme correct.
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    int x =3;
+    boolean f =true;
+    f = x== 3 && f == true;
+    f = x < 2 || f ==false;
+    
+}

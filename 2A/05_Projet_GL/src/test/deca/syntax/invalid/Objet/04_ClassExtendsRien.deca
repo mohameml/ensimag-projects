@@ -1,0 +1,11 @@
+// Description:
+//    Programme definir une class qui extends rien , pas de nom de la classe mère
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:16: extraneous input '{' expecting IDENT , IDENT doit être le nom de la classe mère
+//
+// Historique:
+//    cree le 16/01/2023
+
+class A extends {
+    int x;
+}

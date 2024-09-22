@@ -1,0 +1,11 @@
+// Description :
+//     duplication du decl champ en changent la visibilité 
+// Resultats :
+//    ligne 10 : a est deja declarée 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int a ;
+    protected int a ;
+}

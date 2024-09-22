@@ -1,0 +1,137 @@
+@startuml
+entity Refuge {
+* emailRef
+--
+* nomRef
+* numTel
+* secGeo
+* dateOuv
+* dateFerme
+* nbrPlacesRepas
+* nbrPlacesDormir
+* textePrez
+* typePayement
+* prixNuite
+}
+
+entity Repas {
+* typeRepas
+}
+
+Object prixRepas
+
+<> diamond2
+
+Refuge "1..*" -- diamond2 : ProposeRepas >
+diamond2 -- "1..*" Repas
+diamond2 .. prixRepas
+
+entity Formation {
+* idForm
+* anneeForm
+--
+* nomForm
+* dateDemForm
+* dureeForm
+* nbrPlacesForm
+* descriptForm
+* prixForm
+* nbrActivite
+}
+
+entity Activite {
+* nomActivite
+}
+
+/' Au moins 5 activités dans une formation,
+   contrainte au niveau application '/
+Formation "1..*" -- "1..*" Activite : ProposeActiviteForm >
+
+entity Lot {
+* marque
+* modele
+* anneeAchat
+--
+* nbPiecesLot
+* prixPerteDegr
+* texteInfo
+* anneePerem
+}
+
+Lot "1..*" -- "1..*" Activite : CompatibleAvecActivité >
+
+entity LocationMateriel {
+* idLocationMateriel
+--
+* nbPiecesReserv
+* dateRecup
+* dateRetour
+* nbPiecesPerdues
+}
+
+LocationMateriel "0..*" -- "1..1" Lot : EstLoue <
+
+entity Arbre {
+* categorie
+}
+
+Lot "1..*" -- "1..1" Arbre : AUneCategorie >
+Arbre "0..1" -- "0..*" Arbre : EstEnfantDe >
+
+entity CompteUtilisateur {
+* idUser
+--
+* coutReserv
+* sommeMaterielAbime
+* sommeRembourse
+}
+
+LocationMateriel "0..*" -- "1..1" CompteUtilisateur : LoueMateriel <
+
+entity Membre {
+* emailMem
+--
+* pwdMem
+* nomMem
+* prenomMem
+* adrPostMem
+}
+
+/' Avec la duplication, on aura un table Adhérent qui aura les mêmes attributs que le table Membre. Au niveau application, si un user a le droit de réserver une formation ou une location de matériel, on vérifie si idUser est dans le table Adhérent '/
+entity Adherent  {
+--
+* idAdherent
+}
+
+CompteUtilisateur "1..1" -- "0..1" Membre : PossedeCompte <
+Adherent --|> Membre : { facultatif } 
+
+entity ReservationRefuge {
+* idReservRef
+--
+* dateReservRef
+* heureReservRef
+* nbrNuitsReserv
+* nbrRepasReserv
+* prixTotalReserv
+}
+
+ReservationRefuge "0..*" -- "1..1" Refuge : ConcerneRefuge >
+ReservationRefuge "0..*" -- "1..1" CompteUtilisateur : ReserveRefuge <
+
+object nbRepasReserve
+
+<> diamond3
+ReservationRefuge "0..*" -- diamond3 : ReserveRepas >
+diamond3 -- "0..*" Repas
+diamond3 .. nbRepasReserve
+
+entity ReservationFormation {
+* idReservForm
+--
+* rangReservForm
+}
+
+ReservationFormation "0..*" -- "1..1" Formation : ConcerneFormation >
+ReservationFormation "0..*" -- "1..1" CompteUtilisateur : ReserveFormation <
+@enduml

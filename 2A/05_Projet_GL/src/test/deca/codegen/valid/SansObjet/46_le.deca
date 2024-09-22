@@ -1,0 +1,19 @@
+// Description:
+//    Programme avec test de lower or equal
+// Resultats:
+//    OK
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int a = 3, b=3;
+    int c = 4, d = 2;
+    boolean f = a<=b && d<=c;
+    if (f){
+        println("OK");
+    }
+    if (!f){
+        println("KO");
+    }
+}

@@ -1,0 +1,18 @@
+// Description:
+//    Programme : utilisation du cating entre les classes
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+class A {
+    int x;
+}
+
+class B {
+}
+
+{
+    B a = new B();
+    A b = (A)(a);
+}

@@ -1,0 +1,17 @@
+// Description:
+//    Programme mal déclaration, on utilise new, nom de la classe mais pas ()
+// Resultats:
+//      Programme incorrecte syntaxiquement : 16:15: mismatched input ';' expecting '('
+// Historique:
+//    cree le 18/01/2023
+class A {
+    protected int x;
+    int getX()
+    {
+        return x;
+    }
+}
+
+{
+    A a = new A; 
+}

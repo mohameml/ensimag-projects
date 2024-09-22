@@ -1,0 +1,61 @@
+@startuml analyse
+left to right direction
+
+' cas d'utilisation'
+package Utilisateur as U {
+(créer un compte) as (1)
+(consulter portfeuille) as (2)
+(consulter marché) as (3)
+(suivre action) as (4)
+(opt solde)  as (5)
+(proposer un portfeuille) as (6)
+(faire une opération) as (7)
+(vendre) as (8)
+(acheter) as (9)
+
+(ajouter de l'argent) as (11)
+(retire de l'argent) as (12)
+(consulter le solde) as (13)
+(choisir portfeuille efficient) as (14)
+(choisir portfeuille tangent) as (15)
+(choisir portfeuille de var min) as (16)
+}
+
+' acteur'
+
+actor : client : as c
+
+c --> 1
+c --> 2
+c --> 3
+c --> 4
+c --> 5
+c --> 6
+
+
+' heritage '
+(7) <|-- (8)
+(7) <|-- (9)
+
+(5) <|-- (11)
+(5) <|-- (12)
+(5) <|-- (13)
+
+(6) <|-- (14)
+(6) <|-- (15)
+(6) <|-- (16)
+
+
+
+
+' extend'
+
+7 .> 3 : extends
+
+
+
+
+@enduml
+
+
+

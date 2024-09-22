@@ -1,0 +1,14 @@
+// Description:
+//    tests de this.x dans main
+//
+// Resultats:
+//    programme correcte syntaxiquement 
+//
+// Historique:
+//    cree le 20/01/2024
+
+
+
+{
+    this.x = x;
+}

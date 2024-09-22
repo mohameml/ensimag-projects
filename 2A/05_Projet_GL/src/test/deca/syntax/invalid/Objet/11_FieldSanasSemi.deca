@@ -1,0 +1,11 @@
+// Description:
+//    Programme declaration d'un champ mais sans ;
+// Resultats:
+//      Programme incorrecte syntaxiquement : 11:0: missing ';' at '}'
+// Historique:
+//    cree le 16/01/2023
+
+class A {
+    protected int x
+
+}

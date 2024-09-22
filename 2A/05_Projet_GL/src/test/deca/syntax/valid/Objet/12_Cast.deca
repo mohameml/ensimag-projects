@@ -1,0 +1,12 @@
+// Description:
+//    Programme : utilisation du cating de float vers int
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+{
+    float x =7.3;
+    int y = (int)(x);
+    int s = (int)(42.8);
+}

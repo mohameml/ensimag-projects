@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec print simple d'une chaine de caractère
+// Resultats:
+//    affiche Bonjour tout le monde !
+//
+// Historique:
+//    cree le 21/12/2023
+
+
+{
+    print("Bonjour tout le monde !");
+}

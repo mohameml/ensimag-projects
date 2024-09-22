@@ -1,0 +1,22 @@
+// Description :
+//   passer string au lieu de boolean 
+// Resultats :
+//    ligne 21 :  le string ne peut pas être affecté à boolean
+// Historique : 
+//  cree le 16/01/2024
+
+
+
+class A {
+
+    void method(boolean b ) {
+
+    }
+}
+
+
+{
+    A a = new A();
+
+    a.method("bonjour");
+}

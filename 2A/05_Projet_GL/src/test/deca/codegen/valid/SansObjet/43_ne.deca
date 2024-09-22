@@ -1,0 +1,18 @@
+// Description:
+//    Programme avec test d'inégalité
+// Resultats:
+//    OK
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int a = 3, b=3;
+    boolean f = a!=b;
+    if (f){
+        println("OK");
+    }
+    if (!f){
+        println("KO");
+    }
+}

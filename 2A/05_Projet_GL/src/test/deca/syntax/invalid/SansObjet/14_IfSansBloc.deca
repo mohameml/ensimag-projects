@@ -1,0 +1,11 @@
+// Description:
+//    tests de programme if sans bloc d(instruction)
+// Resultats:
+//    ligne 11  : Error  missing '{' at '}'
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    int x=2;
+   if(x == 2)
+}

@@ -1,0 +1,16 @@
+// Description :
+//     test sur while avec int   
+// Resultats :
+//    Erreur Contexteulle ligne 11 : le type attendu est boolean
+//
+// Historique :
+// cree le 01/01/2024
+
+{
+    
+
+    while(1)
+    {
+        
+    }
+}

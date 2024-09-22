@@ -1,0 +1,13 @@
+// Description:
+//    Programme definition d'une classe après main 
+// Resultats:
+//      Programme incorrecte syntaxiquement :10:0: mismatched input 'class' 
+//      expecting {'=', ';', ',', '||', '&&', '==', '!=', '<=', '>=', '>', '<', 'instanceof', '+', '-', '*', '/', '%', '.'}
+// Historique:
+//    cree le 18/01/2023
+{
+    A a = new A();
+}
+class A {
+    protected int x;
+}

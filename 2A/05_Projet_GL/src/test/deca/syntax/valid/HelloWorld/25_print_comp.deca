@@ -1,0 +1,48 @@
+// Description:
+//    Programme utilisant tous les print avec des comparaison comme list_expr
+//
+// Resultats: programme correcte 
+//    
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print(x==y);
+    print(x!=y);
+    print(x == -y);
+    print(x > y);
+    print( x < y);
+    print(x >= y);
+    print(x <= y);
+    print( x = !y);
+
+    printx(x==y);
+    printx(x!=y);
+    printx(x == -y);
+    printx(x > y);
+    printx( x < y);
+    printx(x >= y);
+    printx(x <= y);
+    printx( x = !y);
+
+    println(x==y);
+    println(x!=y);
+    println(x == -y);
+    println(x > y);
+    println( x < y);
+    println(x >= y);
+    println(x <= y);
+    println( x = !y);
+
+
+    printlnx(x==y);
+    printlnx(x!=y);
+    printlnx(x == -y);
+    printlnx(x > y);
+    printlnx( x < y);
+    printlnx(x >= y);
+    printlnx(x <= y);
+    printlnx( x = !y);
+
+
+}

@@ -1,0 +1,712 @@
+@startuml
+
+abstract class Tree {
+    - Location location 
+    + void setLocation(Location location)
+    + Location getLocation()
+
+    /* Abstract Methode must override */
+    # abstract void prettyPrintChildren(PrintStream s, String prefix)
+    # abstract void iterChildren(TreeFunction f) 
+    # abstract void decompile(IndentPrintStream s)
+}
+
+
+
+abstract class AbstractProgram  {
+    + abstract void verifyProgram(DecacCompiler compiler) throws ContextualError;
+
+
+}
+
+
+abstract class AbstractInst {
+
+    + protected abstract void verifyInst()
+    
+}
+
+abstract class AbstractExpr {
+    - Type type
+    + Type getType()
+    + abstract Type verifyExpr() 
+    + AbstractExpr verifyRValue() 
+    # void verifyInst()
+    ~ verifyCondition()
+}
+
+
+abstract class AbstractMain {
+
+    /**
+     * Implements non-terminal "main" of [SyntaxeContextuelle] in pass 3 
+    **/
+    # abstract void verifyMain(DecacCompiler compiler) throws ContextualError;
+}
+
+
+abstract class AbstractDeclVar {
+
+    # abstract void verifyDeclVar(DecacCompiler compiler, EnvironmentExp localEnv, ClassDefinition currentClass)
+
+}
+
+
+abstract class AbstractBinaryExpr {
+
+    + AbstractBinaryExpr(AbstractExpr leftOperand, AbstractExpr rightOperand)
+    - AbstractExpr leftOperand;
+    - AbstractExpr rightOperand;
+}
+
+
+abstract class AbstractIdentifier  {
+
+    + Type verifyType(DecacCompiler compiler) throws ContextualError
+    + abstract Definition getDefinition()
+    + abstract SymbolTable.Symbol getName()
+    +  abstract ExpDefinition getExpDefinition()
+    + abstract VariableDefinition getVariableDefinition();
+    + abstract void setDefinition(Definition definition);
+
+
+}
+
+
+abstract class AbstractInitialization  {
+    # abstract void verifyInitialization(DecacCompiler compiler, 
+    Type t, EnvironmentExp localEnv, ClassDefinition currentClass)
+
+}
+
+abstract class AbstractLValue  {
+
+}
+
+
+abstract class AbstractOpArith  {
+
+    + AbstractOpArith(AbstractExpr leftOperand, AbstractExpr rightOperand)
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,ClassDefinition currentClass) .
+    
+}
+
+abstract class AbstractOpBool  {
+
+    + AbstractOpBool(AbstractExpr leftOperand, AbstractExpr rightOperand)
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv, ClassDefinition currentClass) 
+} 
+
+
+
+abstract class AbstractOpCmp  {
+
+    
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass) 
+
+}
+
+
+abstract class AbstractOpExactCmp  {
+
+}
+
+abstract class AbstractOpIneq   {
+
+
+}
+
+
+abstract class AbstractPrint  {
+
+    - ListExpr arguments = new ListExpr();
+    + abstract String getSuffix();
+    + ListExpr getArguments() 
+    # void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass, Type returnType)
+            
+
+}
+
+
+abstract class AbstractReadExpr {
+
+    + AbstractReadExpr() 
+
+
+}
+ 
+
+abstract class AbstractStringLiteral  {
+
+    + abstract String getValue();
+    
+}
+
+abstract class AbstractUnaryExpr  {
+
+    - AbstractExpr operand
+    + AbstractExpr getOperand()
+    # abstract String getOperatorName()
+}
+
+
+class And {
+
+    # String getOperatorName() : return "&&"
+
+
+}
+ 
+
+class Assign  {
+
+
+    + AbstractLValue getLeftOperand() :return (AbstractLValue)super.getLeftOperand();
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass) 
+
+    # String getOperatorName() : return "=";
+
+}
+
+
+class BooleanLiteral  {
+ 
+    - boolean value
+    +  boolean getValue() : return value;
+    
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,ClassDefinition currentClass)
+}
+
+class ConvFloat  {
+
+    
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv, ClassDefinition currentClass) {
+
+    # String getOperatorName() :return "/* conv float */";
+    
+
+}
+
+class DeclVar {
+
+    
+    -  AbstractIdentifier type;
+    -  AbstractIdentifier varName;
+    -  AbstractInitialization initialization;
+
+    # void verifyDeclVar(DecacCompiler compiler,
+            EnvironmentExp localEnv, ClassDefinition currentClass)
+
+} 
+
+
+class Divide  {
+
+    # String getOperatorName() :return "/";
+}
+ 
+class EmptyMain  {
+    
+    # void verifyMain(DecacCompiler compiler) 
+}
+    
+
+class Equals  {
+    # String getOperatorName() : return "==";
+}
+
+
+class FloatLiteral {
+
+    + float getValue() 
+    - float value;
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,ClassDefinition currentClass)     
+}
+
+
+class Greater  {
+
+    # String getOperatorName() : return ">";
+}
+
+class GreaterOrEqual  {
+    # String getOperatorName() : return ">=";
+}
+
+class Identifier  {
+    - Symbol name;
+    - Definition definition;
+    + VariableDefinition getVariableDefinition()
+    + ExpDefinition getExpDefinition()
+    + void setDefinition(Definition definition)
+    + Symbol getName() 
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv, ClassDefinition currentClass) 
+    + Type verifyType(DecacCompiler compiler)
+}
+
+class  IfThenElse  {
+    
+    -  final AbstractExpr condition; 
+    -  final ListInst thenBranch;
+    -  ListInst elseBranch;
+    # void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass, Type returnType)
+}
+
+class Initialization {
+
+    - AbstractExpr expression
+    + AbstractExpr getExpression()
+
+    +  setExpression(AbstractExpr expression) 
+
+    # void verifyInitialization(DecacCompiler compiler, Type t,EnvironmentExp localEnv, ClassDefinition currentClass)
+
+}
+
+class IntLiteral  {
+    - int value
+    + int getValue()
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+
+}
+
+
+class ListDeclVar<AbstractDeclVar> {
+    + void verifyListDeclVariable(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+
+}
+
+class ListExpr<AbstractExpr>  {
+
+}
+
+class ListInst<AbstractInst> {
+    
+    + void verifyListInst(DecacCompiler compiler, EnvironmentExp localEnv,ClassDefinition currentClass, Type returnType)
+
+}
+
+class Lower  {
+
+    # String getOperatorName() :return "<";
+    
+
+}
+
+class LowerOrEqual  {
+    # String getOperatorName() : return "<=";
+}
+
+class Main  {
+    - ListDeclVar declVariables;
+    - ListInst insts;
+    # void verifyMain(DecacCompiler compiler)
+}
+
+class Minus  {
+    # String getOperatorName() : return "-";
+
+}
+class Modulo {
+    
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass) 
+
+    # String getOperatorName() : return "%";
+    
+
+}
+
+class Multiply  {
+    # String getOperatorName() :return "*";"
+
+}
+
+class NoInitialization {
+
+    # void verifyInitialization(DecacCompiler compiler, Type t,
+            EnvironmentExp localEnv, ClassDefinition currentClass)
+
+
+} 
+
+class NoOperation  {
+    # void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass, Type returnType)
+}
+
+class Not  {
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+    #  String getOperatorName() : return "!";
+
+}
+
+class NotEquals  {
+    # String getOperatorName() : return "!=";
+
+}
+
+class Or  {
+    # String getOperatorName() : return "||";
+
+}
+class Plus  {
+    # String getOperatorName() : return "+";
+
+}
+
+class Print  {
+
+}
+
+class Println  {
+
+}
+
+class Program  {
+
+    - ListDeclClass classes;
+    - AbstractMain main;
+    + ListDeclClass getClasses()
+    + AbstractMain getMain()
+    + void verifyProgram(DecacCompiler compiler)
+}
+
+class ReadFloat  {
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+
+}
+
+class ReadInt  {
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+}
+
+class StringLiteral {
+    - String value;
+    + String getValue() 
+    +  Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+
+}
+
+abstract class TreeList<TreeType extends Tree> {
+    - List<TreeType> list = new ArrayList<TreeType>();
+    + void add(TreeType i)
+    + List<TreeType> getList()
+    + TreeType set(int index, TreeType element)
+    + boolean isEmpty() 
+    + Iterator<TreeType> iterator()
+    + int size()
+
+}
+ 
+class UnaryMinus  {
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+    # String getOperatorName() : return "-";
+
+}
+
+enum Visibility {
+    PUBLIC,
+    PROTECTED
+}
+
+class While  {
+    - AbstractExpr condition;
+    - ListInst body;
+    + AbstractExpr getCondition()
+    + ListInst getBody()
+    # void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass, Type returnType)
+
+}
+
+class Selection {
+    - AbstractExpr expr ;
+    - AbstractIdentifier identifier ;
+}
+
+class Cast {
+
+    - AbstractExpr expr ;
+    - AbstractIdentifier identifier ;
+    
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+}
+
+class InstanceOf {
+
+    - AbstractExpr expr ;
+    - AbstractIdentifier identifier ;
+    
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+} 
+
+class MethodCall {
+
+    - AbstractExpr expr ;
+    - AbstractIdentifier identifier ;
+    - ListExpr listexpr ;
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+}
+
+
+
+class New {
+
+    - AbstractIdentifier identifier ;
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+
+}
+
+
+
+class Null {
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+
+}
+
+class This {
+    - boolean value ;
+
+    + Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+            ClassDefinition currentClass)
+}
+
+class Return {
+    - AbstractExpr expr
+    + AbstractExpr getExpression()
+    + AbstractExpr setExpression()
+    # void verifyInst(DecacCompiler compiler,EnvironmentExp localEnv, ClassDefinition currentClass, Type returnType)
+}
+
+' ====================================== class ===============================================
+abstract class AbstractDeclClass {
+    # abstract void verifyClass(DecacCompiler compiler) /* passe 1 */
+    # abstract void verifyClassMembers(DecacCompiler compiler) /* passe 2 */ 
+    # abstract void verifyClassBody(DecacCompiler compiler) /* passe 3 */
+}
+
+class ListDeclClass<AbstractDeclClass> {
+    
+    ~ void verifyListClass(DecacCompiler compiler)        /* passe 1 */
+    + void verifyListClassMembers(DecacCompiler compiler) /* passe 2 */ 
+    + void verifyListClassBody(DecacCompiler compiler)    /* passe 3 */ 
+}
+
+class DeclClass  {
+
+    - AbstractIdentifier identifier1 ;
+    - AbstractIdentifier identifier2 ;
+    - ListDeclField champs ; 
+    - ListDeclMethod  methodes ;
+
+    # void verifyClass(DecacCompiler compiler) /* passe 1 */
+    # void verifyClassMembers(DecacCompiler compiler) /* passe 2 */ 
+    # void verifyClassBody(DecacCompiler compiler) /* passe 3 */
+
+}
+
+' ====================================== Field ===============================================
+abstract class AbstractDeclField {
+
+}
+
+class ListDeclField<AbstractDeclField> {
+
+}
+
+class DeclField {
+
+    - Visibility visibility ;
+    - AbstractIdentifier id1 ;
+    - AbstractIdentifier id2 ;
+    - AbstractInitialization init ;
+
+}
+
+
+' ====================================== Methode ===============================================
+
+abstract class AbstractDeclMethod {
+
+
+}
+
+class ListDeclMethod<AbstractDeclMethod> {
+
+}
+
+class DeclMethod {
+
+    - AbstractIdentifier id1 ;
+    - AbstractIdentifier id2 ;
+    - ListDeclParam params ;
+    - AbstractMethodBody body ;
+
+}
+
+' ====================================== Param  ===============================================
+
+abstract class AbstractDeclParam {
+
+}
+
+class ListDeclParam<AbstractDeclParam> {
+
+}
+
+class DeclParam {
+
+    - AbstractIdentifier id1 ;
+    - AbstractIdentifier id2 ;
+}
+
+' ======================== MethodBody ==========================
+
+abstract class AbstractMethodBody {
+
+}
+
+class MethodAsmBody {
+
+    - AbstractStringLiteral
+}
+
+class MethodBody {
+    - ListDeclVar vars ;
+    - ListInst insts ;
+}
+
+MethodAsmBody --|> AbstractMethodBody
+MethodBody --|> AbstractMethodBody
+
+
+
+
+AbstractInst --|> Tree
+AbstractProgram --|> Tree
+AbstractMain --|> Tree
+AbstractDeclVar --|> Tree 
+AbstractInitialization --|> Tree 
+TreeList --|> Tree
+AbstractDeclClass --|> Tree
+AbstractDeclField --|> Tree 
+AbstractMethodBody --|> Tree 
+AbstractDeclMethod --|> Tree 
+AbstractDeclParam --|> Tree 
+
+DeclClass --|> AbstractDeclClass
+
+DeclField --|> AbstractDeclField
+
+DeclMethod --|> AbstractDeclMethod
+
+DeclParam --|> AbstractDeclParam
+
+Program --|> AbstractProgram
+
+EmptyMain --|> AbstractMain
+Main --|> AbstractMain
+
+AbstractLValue --|> AbstractExpr
+AbstractBinaryExpr --|> AbstractExpr
+AbstractReadExpr --|> AbstractExpr
+AbstractStringLiteral --|> AbstractExpr
+AbstractUnaryExpr --|> AbstractExpr
+BooleanLiteral --|> AbstractExpr
+FloatLiteral --|> AbstractExpr
+IntLiteral --|> AbstractExpr
+Cast --|> AbstractExpr
+InstanceOf --|> AbstractExpr
+New --|> AbstractExpr
+MethodCall --|> AbstractExpr
+This --|> AbstractExpr
+Null --|> AbstractExpr  
+
+AbstractOpArith --|> AbstractBinaryExpr 
+AbstractOpBool --|> AbstractBinaryExpr
+AbstractOpCmp --|> AbstractBinaryExpr
+Assign --|> AbstractBinaryExpr
+
+ConvFloat --|> AbstractUnaryExpr
+Not --|> AbstractUnaryExpr
+UnaryMinus --|> AbstractUnaryExpr
+
+AbstractOpExactCmp --|> AbstractOpCmp
+AbstractOpIneq --|> AbstractOpCmp
+
+Equals --|> AbstractOpExactCmp
+NotEquals --|> AbstractOpExactCmp 
+
+
+AbstractIdentifier --|> AbstractLValue
+Selection --|> AbstractLValue
+
+AbstractExpr --|> AbstractInst
+AbstractPrint --|> AbstractInst
+IfThenElse --|> AbstractInst
+NoOperation --|> AbstractInst
+While --|> AbstractInst
+Return --|> AbstractInst
+
+And --|> AbstractOpBool
+Or --|> AbstractOpBool
+
+DeclVar --> AbstractDeclVar
+
+Divide --|> AbstractOpArith
+Minus --|> AbstractOpArith
+Modulo --|> AbstractOpArith
+Multiply --|> AbstractOpArith
+Plus --|> AbstractOpArith
+
+Greater --|> AbstractOpIneq 
+GreaterOrEqual --|> AbstractOpIneq
+Lower --|> AbstractOpIneq
+LowerOrEqual --|> AbstractOpIneq
+
+Identifier --|> AbstractIdentifier 
+ 
+Initialization --|> AbstractInitialization
+NoInitialization --|> AbstractInitialization
+
+ListDeclVar --|> TreeList
+ListExpr --|> TreeList
+ListInst --|> TreeList
+ListDeclClass --|> TreeList
+ListDeclField --|> TreeList
+ListDeclMethod --|> TreeList
+ListDeclParam --|> TreeList
+
+Print --|> AbstractPrint
+Println --|> AbstractPrint
+
+ReadFloat --|> AbstractReadExpr
+ReadInt --|> AbstractReadExpr
+
+StringLiteral --|> AbstractStringLiteral 
+
+@enduml

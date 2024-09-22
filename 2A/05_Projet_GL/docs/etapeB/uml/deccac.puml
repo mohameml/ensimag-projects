@@ -1,0 +1,15 @@
+@startuml
+class DecacMain {
+ + CompilerOptions options
+ + static void main(String[] args)
+}
+
+class DecacCompiler {
+
+    + boolean compile()
+    - boolean doCompile(String sourceName, String destName,..)
+}
+
+DecacCompiler -> DecacMain
+
+@enduml

@@ -1,0 +1,14 @@
+// Description:
+//    Programme  avec les print qui prennent en argument presque tous les argument possible.  
+// Resultats:
+//      programme correcte 
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    print("hello", 1, 2.5, true, false, new A(), (boolean)(f), this,  ident, 2.7, 2*7 , 2/7, 2%1, ((iden + 5)/2)%2);
+    println("hello", 1, 2.5, true, false, new A(), (boolean)(f), this,  ident, 2.7, 2*7 , 2/7, 2%1, ((iden + 5)/2)%2);
+
+    printx("hello", 1, 2.5, true, false, new A(), (boolean)(f), this,  ident, 2.7, 2*7 , 2/7, 2%1, ((iden + 5)/2)%2, 0x1.0p-1);
+    printlnx("hello", 1, 2.5, true, false, new A(), (boolean)(f), this,  ident, 2.7, 2*7 , 2/7, 2%1, ((iden + 5)/2)%2, 0x1.0p-1);
+}

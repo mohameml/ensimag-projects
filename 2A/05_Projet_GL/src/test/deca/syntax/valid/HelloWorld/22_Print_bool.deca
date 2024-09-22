@@ -1,0 +1,13 @@
+// Description:
+//    Programme print boolean.
+//
+// Resultats:
+//    true 
+//     false
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    println(true);
+    print(false);
+}

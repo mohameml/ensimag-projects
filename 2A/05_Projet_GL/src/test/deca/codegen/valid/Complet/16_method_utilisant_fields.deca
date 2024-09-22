@@ -1,0 +1,16 @@
+// Description:
+//    Programme avec instructions dans methodes utilisant les fields.
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2;
+    boolean y =32>43;
+    int k(int l , float m){
+        println(x);
+        return x;
+    }
+}
+

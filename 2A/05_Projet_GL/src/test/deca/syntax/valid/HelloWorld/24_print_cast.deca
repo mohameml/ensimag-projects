@@ -1,0 +1,11 @@
+// Description:
+//    Programme utilisant le casting.
+//
+// Resultats:
+//    affiche 2 en tant que int
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print((int)(2.0));
+}

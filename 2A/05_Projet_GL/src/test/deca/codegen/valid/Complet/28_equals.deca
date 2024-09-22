@@ -1,0 +1,30 @@
+// Description:
+//      Programme avec comparaison utilisant equals.
+//
+// Resultats:
+//      OK
+//
+// Historique:
+// cree le 21/1/2024
+
+class A{
+    int x=2;
+}
+
+class B{
+    A a = new A();
+    A aa = new A();
+    boolean isequals(){
+        if (aa.equals(a)){
+            return true;
+        }
+    }
+}
+
+{
+    B b = new B();
+    boolean c = b.isequals();
+    if (c){
+        print("OK");
+    }
+}

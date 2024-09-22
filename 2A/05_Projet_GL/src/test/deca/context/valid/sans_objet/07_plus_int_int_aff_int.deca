@@ -1,0 +1,13 @@
+// Description :
+//      afféctation d'une opération plus entre deux int dans un int 
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 10/01/2024
+
+
+
+{
+    int a = 1+2;
+}

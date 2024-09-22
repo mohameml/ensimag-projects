@@ -1,0 +1,11 @@
+// Description :
+//      déclaration type sans variable 
+// Resultats :
+//    Erreur Contextuelle : ficher.deca:9:4:int identificateur non déclaré
+// Historique :
+// cree le 09/01/2024
+
+{
+    int; 
+    
+}

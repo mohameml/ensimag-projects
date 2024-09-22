@@ -1,0 +1,15 @@
+// Description:
+//    Programme avec affichage de string
+// Resultats:
+//    OKOK
+//    OKOK
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    print("OK");
+    println("OK");
+    printx("OK");
+    printlnx("OK");
+}

@@ -1,0 +1,19 @@
+// Description:
+//    Programme : declaration de class a sans initialisation  dans main
+// Resultats:
+//      Programme correcte 
+//
+// Historique:
+//    cree le 19/01/2024
+class A {
+    protected int x ;
+    int getX(){
+        return x;
+    }
+}
+
+{
+    A a;
+    a = new A();
+    
+}

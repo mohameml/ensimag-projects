@@ -1,0 +1,8 @@
+// Description:
+//    Programme definir une class sans bloc 
+// Resultats:
+//      Programme incorrecte syntaxiquement : 8:7: no viable alternative at input '<EOF>', juste après A
+//
+// Historique:
+//    cree le 16/01/2023
+class A

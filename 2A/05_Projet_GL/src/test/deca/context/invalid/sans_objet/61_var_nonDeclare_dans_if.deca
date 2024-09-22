@@ -1,0 +1,16 @@
+// Description :
+//     Test avec un identificateur non déclarée dans un if  
+// Resultats :
+//    Erreur Contexteulle : ligne 14 :a identificateur non déclaré
+//
+// Historique :
+// cree le 01/01/2024
+
+
+{
+    int x ; 
+    if(x == 1)
+    {
+        x = a ;
+    }
+}

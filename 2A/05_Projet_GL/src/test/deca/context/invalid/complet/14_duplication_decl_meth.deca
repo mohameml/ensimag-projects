@@ -1,0 +1,16 @@
+// Description :
+//     Duplication du Decl Methode avce le meme type 
+// Resultats :
+//    ligne 13 : get est deja déclarée 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int get() {
+
+    }
+
+    int get() {
+
+    }
+}

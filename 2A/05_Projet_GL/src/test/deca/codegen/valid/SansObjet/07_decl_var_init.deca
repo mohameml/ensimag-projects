@@ -1,0 +1,12 @@
+// Description:
+//    Declaration de variables avec initialisation
+// Resultats:
+//
+// Historique:
+//    cree le 11/1/2024
+
+{
+    int a = 5;
+    float b = 2.50;
+    boolean c = false;
+}

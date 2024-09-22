@@ -1,0 +1,16 @@
+// Description :
+//  test sur print avce class 
+// Resultats :
+//    ligne 15 :  le type attendu int , ﬂoat , string
+// Historique : 
+//  cree le 22/01/2024
+
+class A {
+
+}
+
+
+{
+    A a ;
+    print(a);
+}

@@ -1,0 +1,21 @@
+// Description:
+//    Programme avec deux while imbriquées
+// Resultats:
+//    XYYXYY
+//
+// Historique:
+//    cree le 1/1/2024
+
+{
+    int x =0;
+    int y=0;
+    while(x<=1){
+        y=0;
+        print("X");
+        while(y<2){
+            print("Y");
+            y=y+1;
+        }
+        x=x+1;
+    }
+}

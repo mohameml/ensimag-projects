@@ -1,0 +1,12 @@
+// Description:
+//    Programme print plusieurs lignes, qui n'est pas valable pour print
+//
+// Resultats:
+//    Erreur syntaxique :ligne 10:10: extraneous input '" hell\n    world "' expecting ')'
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print(" hell
+    world ");
+}

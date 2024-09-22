@@ -1,0 +1,17 @@
+// Description :
+//  instanceof en print
+// Resultats :
+//    ligne 11 : le type attendu int , ﬂoat , string
+// Historique : 
+//  cree le 16/01/2024
+
+
+class A {
+
+}
+
+{
+    A a ;
+
+    print(a instanceof A);
+}

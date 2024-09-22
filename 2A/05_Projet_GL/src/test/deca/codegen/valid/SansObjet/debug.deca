@@ -1,0 +1,31 @@
+// Description:
+//    Programme avec instructions dans methodes.
+// Resultats:
+//    6
+//    10
+//    21
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2;
+    boolean y =32>43;
+    int k(int l , int m){
+        println(l+2); //lui ok bizaremment il marche
+        return m+l;
+    }
+
+    int p(int s, int t){
+        int res = t*s;
+        println(res); //lui KO
+        return res;
+    }
+}
+
+{
+    A a = new A();
+    println(a.k(4 , 6)); //lui ok
+    a.p(3,7);
+}
+

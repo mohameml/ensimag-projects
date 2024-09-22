@@ -1,0 +1,13 @@
+// Description :
+//     passer un int a print   
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 10/01/2024
+
+
+{
+    int x = 1 ;
+    print(x); 
+}

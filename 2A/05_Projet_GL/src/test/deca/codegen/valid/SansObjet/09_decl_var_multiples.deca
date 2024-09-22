@@ -1,0 +1,18 @@
+// Description:
+//    Programme avec declarations multiples de variable
+// Resultats:
+//    4-7
+//    2.00000e-011.99900e+00
+//
+// Historique:
+//    cree le 10/1/2024
+
+
+
+{
+    int a, b = 4, c = -7;
+    float e = 0.2, f, g = 1.999;
+    boolean h = false, i = true, j;
+    println(b, c);
+    println(e, g);    
+}

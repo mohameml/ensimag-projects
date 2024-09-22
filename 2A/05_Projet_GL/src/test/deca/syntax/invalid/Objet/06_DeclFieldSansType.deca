@@ -1,0 +1,11 @@
+// Description:
+//    Programme declaration d'un champ sans type.
+// Resultats:
+//      Programme incorrecte syntaxiquement :2:5: no viable alternative at input 'x;'
+//
+// Historique:
+//    cree le 16/01/2023
+
+class A extends B {
+    x;
+}

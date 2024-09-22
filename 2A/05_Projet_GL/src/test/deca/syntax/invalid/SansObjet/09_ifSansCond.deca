@@ -1,0 +1,13 @@
+// Description:
+//    tests de programme if sans condition
+//
+// Resultats:
+//    ligne 10  : Erreur,  mismatched input ')'
+//
+// Historique:
+//    cree le 09/01/2024
+{ 
+    if(){
+        print("hello world!");
+    }
+}

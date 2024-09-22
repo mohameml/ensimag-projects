@@ -1,0 +1,16 @@
+// Description:
+//    Test l'affectation booléenne
+// Resultats:
+//    equal
+// Historique:
+//    cree le 14/1/2024
+
+
+{
+    int mystere = 42;
+    float user = 42;
+    boolean b = mystere != user;
+    if(!b){
+        print("equal");
+    }
+}

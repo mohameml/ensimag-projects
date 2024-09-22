@@ -1,0 +1,26 @@
+// Description:
+//    Programme plusieurs clases qui extendent de la même classe et utilisation de this.
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+
+class A {
+    protected int x;
+    int getX()
+    {
+        return x;
+    }
+}
+
+class B extends A{
+    void setX()
+    {
+       this.x = x;
+    }
+}
+
+class C extends A{
+
+}

@@ -1,0 +1,12 @@
+// Description:
+//    tests de  programme , declaration de variable puis instruction puis une nouvelle déclaration
+//
+// Resultats:
+//    ligne 11 : Erreur,  no viable alternative at input 'y', programme incorrect syntaxiquement
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    x=3;
+    int y;
+}

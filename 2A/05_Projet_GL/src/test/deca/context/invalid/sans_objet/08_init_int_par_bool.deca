@@ -1,0 +1,12 @@
+// Description :
+//     une affcetation non cohérante 
+// Resultats :
+//    Erreur Contexteulle : fichier.deca:11:12:le boolean ne peut pas être affecté à int
+//
+// Historique :
+// cree le 01/01/2024
+
+{
+    boolean bool = true ;
+    int x = bool ;
+}

@@ -1,0 +1,13 @@
+// Description:
+//    Programme avec division d'entiers
+// Resultats:
+//    1.00000e+00
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int x = 4/2;
+    float y = x/2;
+    print(y);
+}

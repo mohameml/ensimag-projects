@@ -1,0 +1,11 @@
+// Description:
+//    Programme avec Print qui prend en argument un autre print donc pas list_expr
+// Resultats:
+//    Erreur syntaxique : ligne 10:10: mismatched input 'print'
+//
+// Historique:
+//    cree le 20/12/2023
+
+{
+    print(print());
+}

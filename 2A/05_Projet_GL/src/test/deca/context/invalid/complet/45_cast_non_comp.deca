@@ -1,0 +1,19 @@
+// Description :
+//   casting entre deux classe qq 
+// Resultats :
+//    ligne 18 : casting entre 'B' et 'A' n'est pas possible 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+}
+
+class B {
+
+}
+
+{
+    A a = new A();
+    a = (B)(a);
+}

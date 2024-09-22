@@ -1,0 +1,10 @@
+// Description:
+//    Programme definir une class sans nom et qui extends une classe mère
+// Resultats:
+//      Programme incorrecte syntaxiquement : 8:6: extraneous input 'extends' expecting IDENT, IDENT est le nom de la classe 
+//
+// Historique:
+//    cree le 16/01/2023
+class extends A {
+    int x;
+}

@@ -1,0 +1,13 @@
+// Description :
+//      déclarée une variable deux fois 
+// Resultats :
+//    Erreur Contexteulle : fichier.deca:12:10:x est déjà déclarée
+//
+// Historique :
+// cree le 01/01/2024
+
+{
+    int x = 2 ;
+
+    int x = 1 ;
+}

@@ -1,0 +1,34 @@
+@startuml
+
+abstract class AbstractExpr {
+
+    + boolean isMinus() :return false ;
+    + boolean isPlus() : return false ;
+    + boolean isDivide() : return false ;
+    +  boolean isMult() :return false ;
+}
+
+class Divide  {
+
+    + boolean isDivide() : return true ;
+}
+
+
+
+class Minus  {
+    + boolean isMinus() :return true  ;
+}
+
+class Multiply  {
+    +  boolean isMult() :return true ;
+}
+
+class Plus  {
+   + boolean isPlus() : return false ;
+}
+
+Divide --|> AbstractExpr 
+Plus --|> AbstractExpr 
+Minus --|> AbstractExpr 
+Multiply --|> AbstractExpr
+@enduml

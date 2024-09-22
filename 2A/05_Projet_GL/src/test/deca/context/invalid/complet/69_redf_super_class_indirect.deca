@@ -1,0 +1,22 @@
+// Description :
+//  une redefinition du methode du super super classe invalide 
+// Resultats :
+//    ligne 19 :  le int n'est pas un sous type du void
+// Historique : 
+//  cree le 16/01/2024
+
+class A {
+    void get() {
+
+    }
+}
+
+class B extends A {
+
+}
+
+class C extends B {
+    int get() {
+        
+    }
+}

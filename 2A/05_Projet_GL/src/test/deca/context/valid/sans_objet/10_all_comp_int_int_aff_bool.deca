@@ -1,0 +1,28 @@
+// Description :
+//  test sur toutes les comparaisons possibles (== , != , >  , >= , < , <=) entre les ints .
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    // EQ : 
+    boolean b1 = 1 == 1 ;
+
+    // NEQ : 
+    boolean b2 = 1 != 2 ;
+
+    // LT : 
+    boolean b3 = 1 < 2 ;
+
+    // LET : 
+    boolean b4 = 1 <= 2 ;
+
+    // GT : 
+    boolean b5 = 1 > 2 ;
+
+    // GEQ : 
+    boolean b6 = 1 >= 2 ;
+
+}

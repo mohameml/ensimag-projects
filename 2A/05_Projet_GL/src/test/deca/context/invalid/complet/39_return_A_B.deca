@@ -1,0 +1,18 @@
+// Description :
+//   return B au leiu A 
+// Resultats :
+//    ligne 10 : le B ne peut pas être affecté à A
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+}
+
+class B {
+    A a ;
+    B b ;  
+    A getA() {
+        return b ; 
+    }
+}

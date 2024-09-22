@@ -1,0 +1,10 @@
+// Description:
+//    Programme declaration d'un champ sans nom.
+// Resultats:
+//      Programme incorrecte syntaxiquement : 2:18: missing IDENT at ';', il manque le nom du champ entre int et ;
+//
+// Historique:
+//    cree le 16/01/2023
+class B{
+    protected int ;
+}

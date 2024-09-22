@@ -1,0 +1,362 @@
+---
+title: "TP2"
+author: "A REMPLIR"
+output:
+    html_document:
+        number_sections: false
+        toc_float: true
+---
+
+<!-- see help at https://bookdown.org/yihui/rmarkdown-cookbook/latex-output.html -->
+
+```{r setup, include=FALSE, message=FALSE}
+#see full list >knitr::opts_chunk$get()
+knitr::opts_chunk$set(echo = TRUE, fig.align="center", prompt = TRUE, comment="", message = FALSE, warning = FALSE)
+```
+
+# Preliminary analysis of the data
+
+## Question 1
+
+```{r}
+# read the data
+
+prostateCancer <- read.table("prostate.data.txt", header=TRUE)
+View(prostateCancer)
+class(prostateCancer) # check that the data is type of data.frame
+
+colnames(prostateCancer)
+
+# supprimer train
+df <- subset(prostateCancer, select = -train)
+View(df)
+```
+
+## Question 2
+
+D’après la matrice de corrélation obtenue, on constate une forte corrélation entre lcavol et les deux prédicteurs lcp et lpsa, on pourra utiliser la fonction pair, mais comme on a vu au tp que c'est mieux d'utiliser la méthode suivante.
+
+```{r}
+# to import the library corrplot
+library(corrplot)
+
+# matrice de corrélation :
+mat_df <- cor(df)
+mat_df
+# affichage
+corrplot(mat_df)
+# pairs(mat_df)
+# the variables which are the most correlated to lcavol : lcp , lpsa
+
+```
+
+# Linear regression
+
+## Question 3
+
+Nous cherchons à élaborer un modèle prédictif pour la variable $lcavol$. En premier lieu, nous observons que nous avons deux prédicteurs qualitatifs, svi et gleason. Nous utilisons la fonction $factor()$ pour obtenir des niveaux de prédicteurs pour chacun d'eux. Ensuite, nous appliquons l'équation de régression suivante :
+
+$\text{lcavol} = \beta_{0}+\beta_{1}\text{lweight}+\beta_{2}\text{age}+\beta_{3}\text{lbph}+\beta_{4}\text{svi1}+\beta_{5}\text{lcp}+\beta_{6}\text{gleason7}+\beta_{7}\text{gleason8}+\beta_{8}\text{gleason9}+\beta_{9}\text{pgg45}+\beta_{10}\text{lpsa} + \epsilon$
+
+avec les $(\beta_{i})_{i \in [\![0;10]\!] }$ et $\epsilon$ représentant l'erreur indépendante des différents prédicteurs. Nous constatons que les intercepts $\beta_{5}$ et $\beta_{10}$ sont significatifs, ce qui soutient l'idée que les prédicteurs $lcp$ et $lpsa$ sont statistiquement significatifs. Cela suggère qu'ils contribuent de manière importante à une meilleure prédiction de $lcavol$.
+
+```{r}
+
+# conversion vers type factor
+class(df$gleason)
+# to convert the gleason to factor
+df$gleason <- as.factor(df$gleason)
+class(df$gleason)
+
+# to convert the svi to factor
+
+df$svi <- as.factor(df$svi)
+class(df$svi)
+
+
+# Regression :
+# lm(Y ~ X1 + X2 + X3 , data = df)
+objet <- lm(lcavol ~ . , data=df)
+
+vec <- objet$coefficients
+
+summary(objet)
+
+```
+
+## Question 4
+
+En analysant les résultats de la fonction $confint()$, plusieurs observations cruciales émergent concernant notre modèle :
+
+1. Certains prédicteurs présentent des intervalles de confiance fortement concentrés autour de zéro. Cela indique que le coefficient $\beta_i$ associé à ces prédicteurs est proche de zéro, voire nul. Par conséquent, nous pouvons conclure que ces prédicteurs sont relativement peu significatifs du point de vue statistique. C'est notamment le cas pour des variables telles que age, pgg45 et lbph.
+
+2. Par ailleurs, certains prédicteurs ont des intervalles de confiance qui n'incluent pas zéro, indiquant ainsi leur importance statistique. Ceci est particulièrement vrai pour les prédicteurs présentant une forte corrélation avec lcavol, tels que lpsa et lcp.
+
+```{r}
+ic.95 <- confint(objet , level = 0.95)
+ic.95
+
+# Si l'intervalle de confiance contient zéro, cela suggère que l'effet de cette variable n'est pas statistiquement significatif
+```
+
+## Question 5
+
+```{r}
+# the effect of lpsa
+```
+
+L'influence significative de lpsa dans notre modèle de prédiction se manifeste par une dépendance robuste avec la variable $lcavol$ que nous cherchons à prédire. En effet, l'intervalle de confiance associé à lpsa exclut la valeur 0, suggérant ainsi que le coefficient $\beta$ correspondant est non nul. De plus, la p-valeur est considérablement basse, permettant ainsi le rejet de l'hypothèse nulle et la confirmation que le $\beta$ est effectivement non nul. Ainsi, lpsa exerce un impact significatif dans le modèle de régression de la variable lcavol.
+
+## Question 6
+
+```{r}
+# Plot the predicted values of lcavol as a function of the actual values :
+pred <- predict(objet , newdata = subset(df , select = -lcavol))
+pred
+
+
+
+plot(df$lcavol ,pred , main="predicted = f(actual)" , col="red" , xlab ="actual values" , ylab="predicted values" , pch=16)
+
+abline(a= 0 , b= 1 , col="green")
+
+# residus :
+res <- resid(objet)
+hist(res, main = "Histogramme des résidus" , xlab="x" , ylab="y")
+
+```
+
+On peut remarquer à l'aide du graphe que les résidus suivent une loi normale.
+
+## Question 7
+
+Initialement, la valeur RSS suggère une correspondance apparemment médiocre entre les valeurs prédites et les valeurs réelles de lcavol. Cela pourrait éventuellement être attribué à la présence de prédicteurs qui pourraient être exclus du modèle.
+
+```{r}
+summary(objet)$r.squared
+
+
+rmse <- sqrt(mean(res^2))
+rmse
+```
+
+## Question 8
+
+```{r}
+
+
+objet2 <- lm(lcavol ~ . , data = subset(df , select = -c(lpsa , lcp)))
+summary(objet2)
+```
+
+### commentaires :
+
+On observe que le modèle actuel présente un RSS plus élevé que le modèle précédent. Cela est probablement dû à l'élimination de deux variables, lpsa et lcp, qui présentent une corrélation significative avec lcavol. Ces variables auraient pu contribuer à une prédiction plus précise de lcavol.
+
+## Question 9
+
+```{r}
+objet2 <- lm(lcavol ~ . , data = subset(df , select = -lweight))
+summary(objet2)
+
+
+```
+
+On peut comparer les coefficients de détermination (R carré) des deux modèles. Dans le premier modèle, nous avons obtenu un R carré d'environ 0,68, indiquant que nous pouvons expliquer 68 % de la variation de lcavol à partir du modèle spécifié. Lorsque nous éliminons lpsa et lcp, le R carré diminue à environ 40 %, démontrant ainsi que lpsa et lcp jouent un rôle crucial dans l'explication de lcavol. En revanche, en supprimant lweight, nous constatons que le R carré est d'environ 0,69, suggérant que lweight ne contribue que modestement à l'amélioration de l'ajustement du modèle.
+
+# Anova -- effects of the qualitative variables
+
+## Question 10
+
+```{r}
+
+# matrice de regression
+
+modele <- lm(lcavol ~ gleason, data =df, x = TRUE)
+
+# Afficher la matrice de régression
+matrice_regression <- model.matrix(modele)
+print(matrice_regression)
+
+
+```
+
+Les sorties révèlent une matrice de dimensions 84 lignes sur 4 colonnes. Chaque ligne correspond à une observation (patient), tandis que chaque colonne est associée à un niveau de Gleason spécifique (7, 8, 9 ou 10). La colonne "Intercept" représente la constante de régression. Il est important de noter que les patients ayant un niveau de Gleason égal ou inférieur à 6 ne sont pas inclus dans cette matrice, car ils servent de référence dans le cadre de la régression logistique multinomiale.
+
+## Question 11
+
+```{r}
+?formula # permettre de specifier l'équation de regression à lm
+eq <- formula(lcavol ~ gleason -1 )
+modele.sans.intercept <- lm(eq , data = df)
+
+# Afficher la matrice de régression
+matrice_regression <- model.matrix(modele.sans.intercept)
+print(matrice_regression)
+```
+
+## Question 12
+
+```{r}
+# test :
+anv.test <- anova(lm(eq , data=df))
+anv.test
+
+#
+model.tables(aov(eq , data = df))
+
+```
+
+## Question 13
+
+```{r}
+# ANOVA à deux facteurs
+mdl <- aov(lcavol ~ svi*gleason, data= df)
+#résultats de l'ANOVA
+summary(mdl)
+
+```
+
+Les résultats de l'analyse de variance à deux facteurs révèlent que les variables prédictives "svi" et "gleason" exercent un effet significatif sur la variable dépendante "lcavol". En effet, les valeurs F pour "svi" et "gleason" s'élèvent respectivement à 44.091 (p < 0.001) et 5.198 (p = 0.00233), suggérant une forte association entre ces variables et "lcavol". Cependant, l'interaction entre "svi" et "gleason" n'atteint pas un niveau de signification (F = 1.168, p = 0.28270), indiquant que leur effet combiné ne produit pas d'impact significatif sur "lcavol". Les résidus présentent également une significativité (p < 0.001), signalant que le modèle n'explique pas entièrement la variance de la variable dépendante.
+
+## Question 14
+
+```{r}
+mdl1 <- aov(lcavol ~ 0 + svi:gleason, data= df)
+summary(mdl1)
+```
+
+Le modèle incluant uniquement l'effet croisé svi:gleason se révèle significatif avec une F-value de 43.69 et une p-value très basse (inférieure à 2e-16), suggérant fortement la validité du modèle. De plus, les résidus présentent une variance homogène, satisfaisant ainsi une autre condition cruciale pour garantir la fiabilité des résultats. En conséquence, on peut conclure que l'interaction entre svi et gleason est significative pour la prédiction de la variable lcavol.
+
+# Best subset selection
+
+## Question 15
+
+```{r}
+# reg avce k=0 :
+res.0 <- resid(lm(lcavol  ~ 1 , data = df))
+sum(res.0^2)
+
+#
+res.1 <- resid(lm(lcavol  ~ . , data = df[, c(1,2, 3)]))
+sum(res.1^2)
+
+
+#
+res.2 <- resid(lm(lcavol  ~ . , data = df[, c(1,2, 5)]))
+sum(res.2^2)
+
+
+```
+
+## Question 16
+
+```{r}
+
+y <- combn(1:8, 2)
+List_residuals <- list()
+ColonneNames <- colnames(prostateCancer)[-1]
+rss_min <- Inf  # Initialise à l'infini pour garantir le remplacement
+a_min <- b_min <- NULL
+
+for (i in seq(1, length(y), 2)) {
+  a <- prostateCancer[[ColonneNames[y[i]]]]
+  b <- prostateCancer[[ColonneNames[y[i + 1]]]]
+  model <- lm(lcavol ~ a + b, data = prostateCancer)
+  rss <- sum(resid(model)^2)
+
+  if (rss < rss_min) {
+    rss_min <- rss
+    a_min <- ColonneNames[y[i]]
+    b_min <- ColonneNames[y[i + 1]]
+  }
+
+  List_residuals <- append(List_residuals, rss)
+}
+
+cat("Les meilleurs prédicteurs à utiliser sont:", a_min, "et", b_min, "\n")
+cat("L'erreur de ces deux prédicteurs est:", rss_min, "\n")
+
+
+```
+
+[]
+
+## Question 17
+
+```{r}
+
+List_pred <- list()
+List_errors_all <- list()
+best_predictors <- c()
+
+for (num_predictors in seq(1:8)) {
+  predictor_indices <- 2:9
+  combinations <- combn(predictor_indices, num_predictors)
+  min_error <- Inf
+
+  for (comb_index in 1:(length(combinations[1,]))) {
+    current_predictors <- combinations[, comb_index]
+    model <- lm(lcavol ~ ., data = prostateCancer[, c(1, current_predictors)])
+    current_error <- sum(resid(model)^2)
+
+    if (current_error < min_error) {
+      min_error <- current_error
+      best_predictors_names <- colnames(prostateCancer[, c(1, current_predictors)])[-1]
+      best_predictors <- current_predictors
+    }
+  }
+
+  List_errors_all <- append(List_errors_all, min_error)
+  List_pred <- append(List_pred, list(best_predictors))
+
+  cat("The best predictors for k =", num_predictors, "are:", best_predictors_names, ", the error is:", min_error, "\n")
+}
+
+
+
+```
+
+## Question 18
+
+En réalité, la somme des carrés des résidus ne constitue pas un indicateur fiable pour évaluer la pertinence du choix du nombre de prédicteurs. En augmentant le nombre de prédicteurs, on risque d'inclure des variables non statistiquement significatives. Cette augmentation peut même conduire à une réduction de l'erreur, mais cela résulte souvent d'un surajustement plutôt que d'une prédiction précise de la variable dépendante. En d'autres termes, le modèle peut bien s'ajuster aux données d'apprentissage, mais il perd en performance lorsqu'il est confronté à de nouvelles données. Ainsi, une approche alternative pertinente pour évaluer la qualité d'un modèle est la validation croisée. Cette technique utilise des mesures de performance sur les données d'apprentissage tout en évaluant la capacité du modèle à généraliser ses prédictions sur de nouvelles données.
+
+```{r}
+
+```
+
+# Split-validation
+
+## Question 19
+
+La validation croisée (split-validation) est une technique utilisée en apprentissage automatique pour évaluer les performances d'un modèle de manière robuste. Elle implique la division du jeu de données en plusieurs ensembles, permettant ainsi de tester le modèle sur des données distinctes de celles sur lesquelles il a été entraîné.
+
+-   tout d'abord Le jeu de données est divisé en deux parties principales : l'ensemble d'entraînement et l'ensemble de validation. L'ensemble d'entraînement est utilisé pour former le modèle, tandis que l'ensemble de validation est réservé pour évaluer ses performances.
+-   puis Le modèle est entraîné sur l'ensemble d'entraînement en ajustant ses paramètres pour minimiser l'erreur sur ces données.
+    -Une fois que le modèle est entraîné, il est évalué sur l'ensemble de validation. Cela permet de mesurer sa capacité à généraliser les modèles et à effectuer des prédictions précises sur des données qu'il n'a pas vues pendant l'entraînement.
+    -Pour rendre l'évaluation plus robuste, le processus est répété plusieurs fois en changeant les ensembles d'entraînement et de validation.
+
+```{r}
+valid_set <-  1:97 %% 3 == 0
+```
+
+## Question 20
+
+En utilisant le paramètre subset spécifié, le modèle s'ajuste en utilisant des données qui ne font pas partie de l'ensemble de validation. En évaluant l'erreur à l'aide de la MSE (Mean Squared Error) pour les prédicteurs lcp et lpsa, nous observons une erreur d'environ $0.46$.
+
+```{r}
+model <- lm(lcavol~., data=df[,c(1,6,9)],subset=!valid_set)
+predNonValid<- predict(model,data.frame(df[!valid_set,][-1]))
+errNonValid <- mean((df[!valid_set,]$lcavol - predNonValid)^2)
+print(errNonValid)
+```
+
+## Question 21
+
+```{r}
+predValid <- predict(object = model, newdata = data.frame(df[valid_set,][-1]))
+errValid <- mean((prostateCancer[valid_set,]$lcavol - predValid)^2)
+print(errValid)
+```
+
+Il est observé que l'erreur sur l'ensemble de validation augmente, reflétant le fait que notre modèle n'a pas été formé sur cet ensemble de données spécifique. Cette erreur offre ainsi un aperçu des performances du modèle sur des données inédites. Dans ce contexte, l'erreur quadratique moyenne est d'environ $0.56$, illustrant les divergences entre les prédictions du modèle et les valeurs réelles sur le jeu de données de validation.

@@ -1,0 +1,11 @@
+// Description :
+//   instanceOf entre : Object et boolean  
+// Resultats :
+//    ligne 10 :  l'opération instanceOf n'est pas possible entre 'Object' et 'boolean'
+// Historique :
+//  cree le 18/01/2024
+
+{
+    Object o ;
+    o instanceof  boolean ;
+}

@@ -1,0 +1,18 @@
+// Description:
+//    Programme : utilisation de print dans une methode
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 19/01/2024
+class A {
+    protected int x ;
+    int getX(){
+        print(" je suis dans getX()");
+        println(" je suis dans getX()");
+        printx(" je suis dans getX()");
+        printlnx(" je suis dans getX()");
+        return x;
+    }
+}
+

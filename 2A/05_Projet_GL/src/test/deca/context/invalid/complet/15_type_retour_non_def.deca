@@ -1,0 +1,13 @@
+// Description :
+//     type de retour de get non definie 
+// Resultats :
+//    ligne 10 : identificateur de type non definie 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+    B get() {
+
+    }
+}

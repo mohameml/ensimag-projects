@@ -1,0 +1,10 @@
+// Description:
+//    Programme declaration d'un champ en bouleversant le type et la visibilité
+// Resultats:
+//      Programme incorrecte syntaxiquement : 10:8: no viable alternative at input 'intprotected'
+// Historique:
+//    cree le 16/01/2023
+
+class A {
+    int protected x;
+}

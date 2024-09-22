@@ -1,0 +1,11 @@
+// Description:
+//    Programme initialisation d'un champ dans la classe.
+// Resultats:
+//      Programme incorrecte syntaxiquement :10:6: no viable alternative at input 'f='
+// Historique:
+//    cree le 19/01/2023
+class B {
+    int y,x;
+    boolean f;
+    f = !f ; 
+}

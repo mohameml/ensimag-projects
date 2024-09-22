@@ -1,0 +1,13 @@
+// Description:
+//    Programme utilisation d'un assigned sans lvalue
+// Resultats:
+//      Programme incorrecte syntaxiquement :10:8: left-hand side of assignment is not an lvalue
+// Historique:
+//    cree le 19/01/2023
+class B {
+    int x;
+    int getX(){
+        2 = x+4;
+        
+    }
+}

@@ -1,0 +1,86 @@
+@startuml
+class Vecteur {
+  - position : Point 
+  - norme: double
+
+  + Vecteur(int x , int y ): void 
+    
+  + add(Vecteur v) : void 
+  + sub(Vecteur v) : void 
+  + mult(double c) : void 
+  + limite(double seuilMax) : void 
+
+
+
+
+}
+
+
+
+class Boid
+{
+  - position : Vecteur 
+  - vitesse : Vecteur 
+  - accéleration : Vceteur 
+
+  + upadet(double L , double l , ArrayList<Boid> boids) : void 
+
+  + Séparation(ArrayList<Boid> boids) : Vecteur
+ 
+  + Alignement(ArrayList<Boid> boids) : Vecteur 
+ 
+  + Cohésion(ArrayList<Boid> boids) : Vecteur
+
+  + equals(Objcet o ) : boolean
+  
+}
+
+
+class Boids
+{
+
+  - boids : ArrayList<Boid> 
+
+  - boidsPositionInit : ArrayList<Boid> 
+
+  + addBoid(Boid b) : void 
+  +  reInit() : void 
+}
+
+
+
+class BoidsSimulator
+{
+  - boids : Boids 
+  - gui : GUISimulator
+}
+
+
+
+class GUISimulator
+{
+
+}
+
+interface Simulable
+{
+  + next()
+  + restart()
+}
+
+/' Utilisateur --> Administrateur : Hérite de '/
+
+Boid *-- Vecteur 
+
+Boids *-- Boid 
+
+BoidsSimulator *-- Boids 
+
+
+BoidsSimulator .. Simulable
+
+
+BoidsSimulator -- GUISimulator : 1 
+
+
+@enduml

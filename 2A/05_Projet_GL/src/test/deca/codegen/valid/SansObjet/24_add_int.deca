@@ -1,0 +1,13 @@
+// Description:
+//    Programme avec add simple d'entiers
+// Resultats:
+//    13
+//
+// Historique:
+//    cree le 3/1/2024
+
+{
+    int x = 3 + 5;
+    int y = 2 + 3;
+    print(x + y);
+}

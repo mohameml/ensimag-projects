@@ -1,0 +1,9 @@
+// Description:
+//    Programme declaration d'un champ de visibilité private
+// Resultats:
+//      Programme incorrecte syntaxiquement : 8:16: no viable alternative at input 'privateintx' , il reconnait private en temps que ident.
+// Historique:
+//    cree le 16/01/2023
+class c {
+    private int x;
+}

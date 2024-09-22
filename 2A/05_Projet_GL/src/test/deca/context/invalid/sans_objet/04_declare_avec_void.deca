@@ -1,0 +1,12 @@
+// Description :
+//     declarée une variable avce void  
+// Resultats :
+//    Erreur Contexteulle : fichier.deca:11:9:le type attendu doit étre différent de void
+//
+// Historique :
+// cree le 01/01/2024
+
+
+{
+    void x ;
+}

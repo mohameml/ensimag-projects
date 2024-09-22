@@ -1,0 +1,22 @@
+// Description :
+//  une redefinition du methode du super super classe invalide 
+// Resultats :
+//    ligne 19 :  le float n'est pas un sous type du int
+// Historique : 
+//  cree le 16/01/2024
+
+class A {
+    int get() {
+
+    }
+}
+
+class B extends A {
+
+}
+
+class C extends B {
+    float get() {
+        
+    }
+}

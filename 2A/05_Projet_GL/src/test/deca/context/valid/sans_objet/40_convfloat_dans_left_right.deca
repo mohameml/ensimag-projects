@@ -1,0 +1,13 @@
+// Description :
+//     Test sur convfloat : avce le deux cas possible : left and right  
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 12/01/2024
+
+{
+    1.2 + 1 ;
+
+    1 + 2.2 ;
+}

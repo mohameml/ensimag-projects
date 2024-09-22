@@ -1,0 +1,18 @@
+// Description :
+//    redefinition d'une methode avec un type de retour diff 
+// Resultats :
+//    ligne 15 : le boolean n'est pas un sous type du int  
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int get() {
+
+    }
+}
+
+class B extends A {
+    boolean get() {
+        
+    }
+}

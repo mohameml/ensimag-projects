@@ -1,0 +1,19 @@
+// Description :
+//   acces a un champ protege : condition 1 du poly 
+// Resultats :
+//    ligne 17 :  x est protege
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    protected int x;
+}
+
+class X {
+    void m()
+    {
+        A a = new A();
+        println(a.x) ; 
+    }
+
+}

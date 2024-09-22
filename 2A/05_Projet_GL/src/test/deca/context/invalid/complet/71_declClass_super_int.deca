@@ -1,0 +1,10 @@
+// Description :
+//  class super de type int 
+// Resultats :
+//    ligne 11 : nature attendu du int : classe
+// Historique : 
+//  cree le 16/01/2024
+
+class A extends int {
+    
+}

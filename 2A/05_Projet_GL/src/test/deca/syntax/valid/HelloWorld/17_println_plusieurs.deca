@@ -1,0 +1,13 @@
+// Description:
+//    Programme println plusieurs elements
+// Resultats:
+//     Bonjour hello evry 
+//      body
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    println("Bonjour ", "hello ", "every ");
+    println("body");
+}

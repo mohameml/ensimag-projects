@@ -1,0 +1,24 @@
+class Madou{
+    void madou(){}
+
+}
+class A {
+    int x = 7;
+    int m(int l, int s) {
+       return l + s + x; 
+    }
+    
+}
+class BetweenAB{
+    void between(){}
+
+}
+class B extends A{
+    void b(){}
+
+}
+
+class Noparent {
+
+    void noParent(){}
+}

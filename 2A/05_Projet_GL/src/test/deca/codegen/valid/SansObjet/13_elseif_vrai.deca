@@ -1,0 +1,14 @@
+// Description:
+//    Programme avec ifThenElse : condition de else if vrai
+// Resultats:
+//    Branche else if
+//
+// Historique:
+//    cree le 1/1/2024
+
+{
+    int x = 2;
+    if (1 < -x) { print("Branch Then"); }
+    else if (x > 0) { print("Branch else if"); }
+    else { print("Branch Else"); }
+}

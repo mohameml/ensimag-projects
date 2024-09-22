@@ -1,0 +1,20 @@
+@startuml
+
+Participant "Client" as C
+Participant "controle" as co
+Participant "marché" as U
+
+hide footbox
+
+C -> co : acheter(nombre, Action)
+activate co
+
+co -> U : nombreDisponible(nombre, Action)
+activate U
+
+U --> co : ok
+deactivate U
+
+co --> C : ok
+
+@enduml

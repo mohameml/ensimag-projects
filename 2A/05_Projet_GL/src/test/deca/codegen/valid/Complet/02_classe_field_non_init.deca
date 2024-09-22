@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec fields initialisés par défaut 
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x; 
+    float y; 
+    boolean z;
+}

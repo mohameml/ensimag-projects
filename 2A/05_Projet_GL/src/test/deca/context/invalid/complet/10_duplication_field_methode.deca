@@ -1,0 +1,15 @@
+// Description :
+//     duplication du champ en methode 
+// Resultats :
+//    ligne 12 : x est deja déclarée
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+    int x ; 
+
+    int x() {
+        
+    }
+}

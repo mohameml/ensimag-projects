@@ -1,0 +1,11 @@
+// Description:
+//    Programme print decl class
+//
+// Resultats: programme correcte syntaxiquement, faux contextuellement
+//    
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print(new A());
+}

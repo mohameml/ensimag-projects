@@ -1,0 +1,11 @@
+// Description:
+//    Programme : conv boolean  ints
+// Resultats:
+//      Programme correcte syntaxiquement et faux contextuellement 
+//
+// Historique:
+//    cree le 18/01/2024
+{
+    boolean f;
+    int x = (int)(f);
+}

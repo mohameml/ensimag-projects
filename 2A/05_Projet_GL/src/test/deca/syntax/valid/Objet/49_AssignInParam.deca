@@ -1,0 +1,17 @@
+// Description:
+//    Programme : assign dans param
+// Resultats:
+//      Programme correcte synatxiquement incorrecte contextuellemnt 
+//
+// Historique:
+//    cree le 20/01/2024
+class b{
+    int x;
+    int add(int x, int y){
+        return y+x;
+    }
+}
+{
+    b a = new b();
+    a.add(x = 2, 3);
+}

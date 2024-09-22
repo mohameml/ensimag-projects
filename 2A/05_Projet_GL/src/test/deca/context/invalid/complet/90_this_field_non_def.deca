@@ -1,0 +1,15 @@
+// Description :
+//   this avce un champ qui n'existe pas 
+// Resultats :
+//    ligne 12 : c identificateur non déclaré
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int a ;
+    void get() {
+
+        int b = this.c;
+    }
+    
+}

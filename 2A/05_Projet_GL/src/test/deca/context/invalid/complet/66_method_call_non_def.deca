@@ -1,0 +1,20 @@
+// Description :
+//   Appel de méthode qui n'existe pas 
+// Resultats :
+//    ligne 19 :  mult identificateur non déclaré
+// Historique : 
+//  cree le 16/01/2024
+
+
+class A {
+    int add(int a , int b) {
+        return a + b ; 
+    }
+}
+
+
+{
+    A a = new A();
+
+    int res = a.mult(1, 2);
+}

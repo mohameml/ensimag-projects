@@ -1,0 +1,11 @@
+// Description:
+//    Programme avec un nombre de \ impaire  
+//
+// Resultats:
+//    Erreur lexicale :10:10: token recognition error at: '"Hello \\\");\n}', il reste un \ non protégé
+//
+// Historique:
+//    cree le 20/12/2023
+{
+    print("Hello \\\");
+}

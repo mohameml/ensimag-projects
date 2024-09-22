@@ -1,0 +1,20 @@
+// Description:
+//    Programme  while dont la condition est un boolean avec ifthenelse dans son bloc d'instuction
+// Resultats:
+//      programme correcte syntaxiquement 
+//
+// Historique:
+//    cree le 09/01/2024
+
+{
+    boolean f = true;
+    int x =0;
+    
+    while( x ==0)
+    {
+        if(x == 3)
+        {
+            // x=4;
+            f =false;
+            println("je suis dans if");
+            x = x+1;

@@ -1,0 +1,19 @@
+// Description :
+//   Appelle de methode avce de type non compatible partie droite 
+// Resultats :
+//    ligne 18 :  le boolean ne peut pas être affecté à int
+// Historique : 
+//  cree le 16/01/2024
+
+class A {
+    int add(int a , int b) {
+        return a + b ; 
+    }
+}
+
+
+{
+    A a = new A();
+
+    int res = a.add(1 , true);
+}

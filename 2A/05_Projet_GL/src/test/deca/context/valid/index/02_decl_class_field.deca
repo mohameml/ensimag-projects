@@ -1,0 +1,20 @@
+
+
+// attendu : NF = 2 , NM = 1
+
+
+// class A {
+//     int x ; 
+//     int y ; 
+
+// }
+
+class A {
+    void m() { }
+    void p() { }
+}
+
+class B extends A {
+    void p() { }
+    void q() { }
+}

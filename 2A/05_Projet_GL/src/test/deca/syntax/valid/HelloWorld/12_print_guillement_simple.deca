@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec guillemet simple 
+// Resultats:
+//    helloo world! ' je suis !
+//
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    println("helloo world! ' je suis !");
+}

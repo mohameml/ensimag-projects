@@ -1,0 +1,13 @@
+// Description :
+//     faire un castring de int vers float 
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 01/01/2024
+
+
+{
+    int x = 1;
+    float f = x ;
+}

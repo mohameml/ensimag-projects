@@ -1,0 +1,13 @@
+// Description:
+//    Programme utilsant plusieurs mains 
+// Resultats:
+//      Programme incorrecte syntaxiquement :10:0: mismatched input '{' 
+//      expecting {'=', ';', ',', '||', '&&', '==', '!=', '<=', '>=', '>', '<', 'instanceof', '+', '-', '*', '/', '%', '.'}
+// Historique:
+//    cree le 19/01/2023
+{
+    int x =3;
+}
+{
+    int y =5;
+}

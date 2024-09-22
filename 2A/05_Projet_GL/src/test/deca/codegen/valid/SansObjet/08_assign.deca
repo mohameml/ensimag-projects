@@ -1,0 +1,15 @@
+// Description:
+//    Declaration de variables avec affectation avec declaration
+// Resultats:
+//
+// Historique:
+//    cree le 11/1/2024
+
+{
+    int a;
+    float b;
+    boolean c;
+    a = 2;
+    b = 4.6;
+    c = true;
+}

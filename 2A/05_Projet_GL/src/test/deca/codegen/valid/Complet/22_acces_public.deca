@@ -1,0 +1,28 @@
+// Description:
+//    Programme avec accsè au champs public.
+// Resultats:
+//    2
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2;
+    int incr( int n ){
+        return n+1;
+    }
+}
+
+class B{
+    A a = new A();
+    int get_public(){
+        return a.x;
+    }
+}
+
+{
+    B b = new B();
+    int y = b.get_public();
+    print(y);
+}
+

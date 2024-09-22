@@ -1,0 +1,11 @@
+// Description :
+//     duplication de declParam 
+// Resultats :
+//    ligne 10 : a est deja declarée
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int a ;
+    boolean a ;
+}

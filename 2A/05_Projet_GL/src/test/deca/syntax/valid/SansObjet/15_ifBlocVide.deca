@@ -1,0 +1,11 @@
+// Description:
+//    Programme  if dont la condition est un boolean et avec un bloc vide
+//
+// Resultats:
+//      programme correcte syntaxiquement 
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    if(true){}
+}

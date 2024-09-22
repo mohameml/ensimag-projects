@@ -1,0 +1,11 @@
+// Description:
+//    Programme avec instruction en dehors du main.
+// Resultats:
+//    Erreur syntaxique :ligne 9:0: no viable alternative at input 'print', car c'est pas valableun instruction en dehors du bloc main.
+//
+// Historique:
+//    cree le 20/12/2023
+
+print("HelloWorld");
+{
+}

@@ -1,0 +1,10 @@
+// Description :
+//   casting : str --> float 
+// Resultats :
+//    ligne 9 :  casting entre 'float' et 'string' n'est pas possible
+// Historique :
+//  cree le 16/01/2024
+
+{
+    (float)("1.2");
+}

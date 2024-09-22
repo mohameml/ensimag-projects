@@ -1,0 +1,21 @@
+// Description :
+//   afféctation d'un identificateur de methode 
+// Resultats :
+//    ligne 14 :  nature attendu : champ , paramètre , varibale
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int x; 
+    int get() {
+        get = 1 ;
+    }
+
+}
+
+class B {
+    A a ;
+    void inti() {
+        a.get = 0 ;
+    } 
+}

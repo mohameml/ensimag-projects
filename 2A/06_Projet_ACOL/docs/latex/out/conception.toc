@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}\textbf {Introduction}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {choix de l'Architecture : MVC}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Conception du Modèle}}{3}{}%
+\contentsline {subsection}{\numberline {3.1}User}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Marche}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Action}{4}{}%
+\contentsline {section}{\numberline {4}\textbf {Conception de l'interface utilisateur}}{5}{}%

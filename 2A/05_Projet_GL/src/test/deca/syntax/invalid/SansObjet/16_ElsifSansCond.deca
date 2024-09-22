@@ -1,0 +1,16 @@
+// Description:
+//    tests de programme if sans condition
+//
+// Resultats:
+//    ligne 13  : Erreur,  mismatched input '{' expecting '('
+//
+// Historique:
+//    cree le 09/01/2024
+{ 
+    int x =0;
+    if( x ==0){
+        print("hello world!");
+    }else if{
+        println("je suis dans else if");
+    }
+}

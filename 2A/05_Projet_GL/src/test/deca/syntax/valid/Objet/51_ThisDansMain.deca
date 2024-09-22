@@ -1,0 +1,11 @@
+// Description:
+//    Programme : utilisation de this dans main
+// Resultats:
+//      Programme correcte syntaxiquement incorrecte contextuellemnt 
+//
+// Historique:
+//    cree le 20/01/2024
+{
+    int x,y;
+    y = this + x;
+}

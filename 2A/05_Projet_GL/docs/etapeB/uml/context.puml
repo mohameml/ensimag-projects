@@ -1,0 +1,265 @@
+@startuml
+
+class DecacCompiler {
+    + final EnvironmentType environmentType = new EnvironmentType(this);
+    + final SymbolTable symbolTable = new SymbolTable();
+    + Symbol createSymbol(String name)
+    + boolean compile()
+    - boolean doCompile(String sourceName, String destName,..)
+}
+
+class SymbolTable {
+
+    -  Map<String, Symbol> map = new HashMap<String, Symbol>();
+    +   Symbol create(String name)
+
+}
+
+class Symbol {
+    -  String name
+    + public String getName()
+    -  private Symbol(String name)
+}
+
+
+SymbolTable *--"1" Symbol : composition
+SymbolTable -> DecacCompiler
+
+
+class Location {
+    - final int line;
+    - final int positionInLine;
+    - final String filename;
+    + public int getLine()
+    + public int getPositionInLine()
+    + public String getFilename() 
+}
+
+abstract class Type {
+
+ - final Symbol name;
+ + abstract boolean sameType(Type otherType);
+ + Type(Symbol name) 
+ + boolean isClass()
+ + boolean isInt()
+ + boolean isFloat()
+ + boolean isBoolean()
+ + boolean isVoid()
+ + boolean isNull()
+ + boolean isClassOrNull()
+}
+
+class StringType {
+    
+    + boolean isString()  :return true;
+}
+
+class VoidType {
+
+}
+
+class BooleanType {
+    + boolean isBoolean() : return true;
+}
+
+
+class IntType {
+
+   + boolean isInt() :return true;
+}
+
+class FloatType {
+
+    +  boolean isFloat() : return true;
+}
+
+class NullType {
+
+    + boolean isNull() : return true;
+
+    + boolean isClassOrNull() : return true;
+
+}
+
+class ClassType {
+    
+    # ClassDefinition definition;
+    + ClassDefinition getDefinition()
+    + boolean isClass() :return true;
+    +  boolean isClassOrNull() : return true;
+    + ClassType(Symbol className, Location location, ClassDefinition superClass)
+    + boolean isSubClassOf(ClassType potentialSuperClass)
+
+
+}
+
+StringType --|> Type
+VoidType --|> Type
+BooleanType --|> Type
+IntType --|> Type
+FloatType --|> Type
+NullType --|> Type
+ClassType --|> Type 
+
+
+enum Visibility {
+    PUBLIC 
+    PROTECTED
+}
+
+
+abstract class Definition {
+
+    - Location location
+    -  Type type
+    + Definition(Type type, Location location)
+    + abstract String getNature()
+    + public Type getType()
+    + boolean isField()
+    + boolean isMethod()
+    + boolean isClass()
+    + boolean isParam()
+    + abstract boolean isExpression()
+    +  MethodDefinition asMethodDefinition(String errorMessage, Location l)
+    +  FieldDefinition asFieldDefinition(String errorMessage, Location l)
+
+}
+
+
+class TypeDefinition {
+
+    +  TypeDefinition(Type type, Location location)
+    + String getNature() :return "type";
+    + boolean isExpression() :return false;
+    
+}
+
+
+class ClassDefinition {
+
+
+    - int numberOfFields
+    - int numberOfMethods 
+    -  EnvironmentExp members;
+    - ClassDefinition superClass; 
+ 
+    + ClassDefinition(ClassType type, Location location, ClassDefinition superClass)
+
+    + setNumberOfFields(int numberOfFields)
+    + getNumberOfFields()
+    + incNumberOfFields()
+
+    + setNumberOfMethods(int n)
+    + getNumberOfMethods()
+    + int incNumberOfMethods()
+
+    +  boolean isClass() :return true;
+    + ClassType getType()
+
+    + ClassDefinition getSuperClass()
+    + EnvironmentExp getMembers()
+}
+
+
+
+
+
+abstract class ExpDefinition {
+    +  ExpDefinition(Type type, Location location)
+}
+
+
+
+
+class  VariableDefinition {
+
+    +  VariableDefinition(Type type, Location location) /* décoration : --> type */
+    + String getNature() : return "variable";
+    + boolean isExpression() : return true;
+    
+}
+
+class FieldDefinition {
+
+    - int index;
+    - final Visibility visibility;
+    - final ClassDefinition containingClass;
+    
+    + int getIndex()
+    +  Visibility getVisibility() 
+    +  ClassDefinition getContainingClass()
+        
+    + boolean isExpression() :return true;
+    + String getNature() : return "field";
+}
+
+class MethodDefinition {
+    - int index;
+    - final Signature signature;
+    
+    + MethodDefinition(Type type, Location location, Signature signature, int index)
+
+    + Signature getSignature()
+    + int getIndex()
+
+    + String getNature() :return "method";
+    + boolean isExpression()  :return false;
+
+}
+
+class ParamDefinition {
+
+    +  ParamDefinition(Type type, Location location)
+    + getNature() : return "parameter";
+    + isExpression() : return true;
+    +  isParam() : return true;
+
+}
+
+
+
+TypeDefinition --|> Definition
+ExpDefinition --|> Definition
+
+
+ClassDefinition --|> TypeDefinition
+
+VariableDefinition  --|> ExpDefinition
+FieldDefinition --|> ExpDefinition
+MethodDefinition --|> ExpDefinition
+ParamDefinition --|> ExpDefinition
+
+
+
+class EnvironmentExp {
+   - DAddr operand; 
+   + EnvironmentExp parentEnvironment
+   + EnvironmentExp(EnvironmentExp parentEnvironment)
+   + ExpDefinition get(Symbol key)
+   + void declare(Symbol name, ExpDefinition def)
+
+}
+
+class EnvironmentType {
+    +  EnvironmentType(DecacCompiler compiler)
+    -  final Map<Symbol, TypeDefinition> envTypes
+
+    + final VoidType    VOID;
+    + final IntType     INT;
+    + final FloatType   FLOAT;
+    + final StringType  STRING;
+    + final BooleanType BOOLEAN;
+}
+
+
+class Signature {
+
+    ~ List<Type> args = new ArrayList<Type>();
+    + void add(Type t)
+    + Type paramNumber(int n) : return args.get(n);
+    + int size()
+}
+
+
+
+@enduml

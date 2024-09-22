@@ -1,0 +1,11 @@
+// Description :
+//      unray Minus avec string 
+// Resultats :
+//    Erreur Contexteulle : ligne 10 : l'opération UnrayMinus - devant string n'est pas valide
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    - "bonjour";
+}

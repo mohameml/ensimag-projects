@@ -1,0 +1,24 @@
+// Description:
+//    Programme avec un jeu pour deviner le numbre mystère
+// Resultats:
+//    Depend des entrées utilisateurs
+//
+// Historique:
+//    cree le 11/1/2024
+
+{
+    float valeurUser;
+    int nombreMystere = 42;
+
+    while(nombreMystere != valeurUser){
+        println("Devinez le nombre mystere");
+        valeurUser = readFloat();
+        if(valeurUser > nombreMystere){
+            println("votre nombre ", valeurUser, " est plus grand que nombreMystere");
+        }else if(valeurUser < nombreMystere){
+            println("votre nombre ", valeurUser, " est plus petit que nombreMystere");
+        }else{
+            printlnx("Bravo!! ,vous avez Devinez le nombre");
+        }
+    }
+}

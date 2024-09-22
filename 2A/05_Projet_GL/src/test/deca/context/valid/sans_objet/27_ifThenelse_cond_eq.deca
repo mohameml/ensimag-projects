@@ -1,0 +1,18 @@
+// Description :
+//     Test sur ifThenelse    
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 01/01/2024
+{
+    int x ;
+    if(1==2)
+    {
+        x = 3 ;
+    }
+    else 
+    {
+        x = 2 ;
+    }
+}

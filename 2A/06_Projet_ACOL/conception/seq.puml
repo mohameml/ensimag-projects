@@ -1,0 +1,10 @@
+@startuml seq 
+
+actor user 
+
+user -> Application : acheter n Action
+
+' Application -> 
+
+
+@enduml

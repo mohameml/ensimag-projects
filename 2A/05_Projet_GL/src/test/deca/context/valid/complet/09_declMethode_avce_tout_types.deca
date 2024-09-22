@@ -1,0 +1,33 @@
+// Description :
+// Test valide contextulle
+// Resultats :
+//    Arbre avec décoration 
+// Historique : 
+//  cree le 18/01/2024
+
+class A {
+
+}
+
+class B {
+
+    void meth1() {
+
+    }
+
+    int meth2() {
+
+    }
+
+    float meth3() {
+
+    }
+
+    A getA() {
+
+    }
+
+    boolean getBool() {
+
+    }
+}

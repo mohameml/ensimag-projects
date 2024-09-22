@@ -1,0 +1,17 @@
+// Description :
+//  Test sur des afféctations valides 
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 11/01/2024
+
+{
+    int x ; 
+    boolean b ; 
+    float f ;
+
+    x = 2 ;
+    b = true ;
+    f = 12.5 ;
+}

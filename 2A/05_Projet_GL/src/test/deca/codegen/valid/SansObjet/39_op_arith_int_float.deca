@@ -1,0 +1,20 @@
+// Description:
+//    Programme avec conversion de int en float
+// Resultats:
+//    8.50000e+00
+//    7.50000e+00
+//    6.50000e+00
+//    7.50000e+00
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int a = 1;
+    float b;
+    b = 7.5;
+    println(a+b);
+    println(b*a);
+    println(b-a);
+    println(b/a);
+}

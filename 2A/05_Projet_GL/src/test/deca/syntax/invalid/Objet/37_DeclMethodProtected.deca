@@ -1,0 +1,13 @@
+// Description:
+//    Programme definition d'une class de visibilité protected
+// Resultats:
+//      Programme incorrecte syntaxiquement :9:22: mismatched input '(' expecting {'=', ';', ','}
+// Historique:
+//    cree le 18/01/2023
+class A {
+    protected int x;
+    protected int getX()
+    {
+        return x;
+    }
+}

@@ -1,0 +1,11 @@
+// Description :
+//      afféctation Not  devant un boolean dans un boolean 
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 09/01/2024
+
+{
+    boolean bool = !true ;
+}

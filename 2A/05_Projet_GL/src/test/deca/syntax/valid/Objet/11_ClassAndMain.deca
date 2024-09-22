@@ -1,0 +1,49 @@
+// Description:
+//    Programme : définition d'une classe et initalisation de cette classe dans main et appelation de certaines methodes
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+class A {
+    protected float x;
+    protected boolean f;
+    
+    void set(float x, boolean y)
+    {
+        this.x =x;
+        this.f = f;
+    }
+    void setX()
+    {
+        this.x =x;
+    }
+
+    void setF()
+    {
+        this.f = f;
+    }
+
+    float getX()
+    {
+        return x;
+    }
+
+    boolean getF()
+    {
+        return f;
+    }
+}
+
+{
+    A a = new A() ;
+    a.setX(1.5) ;
+    a.setF(true);   
+    println("a.getX() = ", a.getX()) ;
+    println("a.getF() = ", a.getF()) ;
+    
+    a.set(0.5, false);
+    println("a.getX() = ", a.getX()) ;
+    println("a.getF() = ", a.getF()) ;
+
+}

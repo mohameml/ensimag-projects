@@ -1,0 +1,19 @@
+// Description:
+//    Programme avec affichage.
+// Resultats:
+//    Hello
+//    hello World " hello again how are \ you \ fine and you? World
+//    !"!"
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    println("Hello");
+    print("hello World \" hello again ");
+    printx("how are \\ you \\");
+    printx("fine and you? ");
+    println("World");
+    printx("!");
+    printlnx("\"!\"");
+}

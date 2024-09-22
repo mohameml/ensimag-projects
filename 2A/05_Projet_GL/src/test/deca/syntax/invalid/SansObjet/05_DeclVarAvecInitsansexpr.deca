@@ -1,0 +1,11 @@
+// Description:
+//    tests de programme declaration de  variable avec initialisation mais sans expr à droite
+//
+// Resultats:
+//    ligne 10 colone 14 : Erreur,  missing IDENT at ';'
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    int x = ;
+}

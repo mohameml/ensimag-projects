@@ -1,0 +1,18 @@
+// Description:
+//    Programme :appelle de asm dans main
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 16/01/2024
+class A {
+   int getX() asm(
+    "hello everyone !"
+   );
+}
+
+{
+   A a = new A() ;
+   println("a.getX() = ", a.getX()) ;
+}
+

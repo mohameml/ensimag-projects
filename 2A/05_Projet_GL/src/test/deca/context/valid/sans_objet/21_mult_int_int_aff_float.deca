@@ -1,0 +1,11 @@
+// Description :
+//     Test sur convfloat avec la mult de deux int  
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 12/01/2024
+
+{
+    float f = 1*2 ;
+}

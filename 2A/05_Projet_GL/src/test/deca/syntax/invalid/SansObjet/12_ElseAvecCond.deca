@@ -1,0 +1,19 @@
+// Description:
+//    tests de programme qui a un else avec une condition 
+//
+// Resultats:
+//    ligne 15  :  no viable alternative at input 'else('
+//
+// Historique:
+//    cree le 09/01/2024
+{ 
+    int x=2;
+    if(x==2)
+    {
+        println("je suis dans if");
+    }
+    else(x != 2){
+        print("je suis dans else");
+    }
+    
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec plusieurs caractère protégé
+// Resultats:
+//    Il a dit : "Bonjour" je suis "M'hamed" et \je suis  ...\ 
+//
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    println("Il a dit : \"Bonjour\" je suis \"M'hamed \" et \\ je suis ...\\ ");
+}

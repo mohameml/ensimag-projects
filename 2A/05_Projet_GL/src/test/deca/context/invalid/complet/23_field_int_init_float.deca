@@ -1,0 +1,11 @@
+// Description :
+//    Assign invalide dans decl field : float --> int 
+// Resultats :
+//    ligne 10 : le float ne peut pas être affecté à int
+// Historique :
+//  cree le 16/01/2024
+
+
+class A {
+    int a = 12.3 ; 
+}

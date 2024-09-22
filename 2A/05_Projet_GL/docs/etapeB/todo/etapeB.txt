@@ -1,0 +1,77 @@
+src/main/java/fr/ensimag/deca/DecacCompiler.java:        prog.verifyProgram(this);
+src/main/java/fr/ensimag/deca/tree/AbstractDeclClass.java:    protected abstract void verifyClass(DecacCompiler compiler)
+src/main/java/fr/ensimag/deca/tree/AbstractDeclClass.java:    protected abstract void verifyClassMembers(DecacCompiler compiler)
+src/main/java/fr/ensimag/deca/tree/AbstractDeclClass.java:    protected abstract void verifyClassBody(DecacCompiler compiler)
+src/main/java/fr/ensimag/deca/tree/AbstractDeclVar.java:    protected abstract void verifyDeclVar(DecacCompiler compiler,
+src/main/java/fr/ensimag/deca/tree/AbstractExpr.java:    public abstract Type verifyExpr(DecacCompiler compiler,
+src/main/java/fr/ensimag/deca/tree/AbstractExpr.java:    public AbstractExpr verifyRValue(DecacCompiler compiler,
+src/main/java/fr/ensimag/deca/tree/AbstractExpr.java:    protected void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/AbstractExpr.java:    void verifyCondition(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/AbstractIdentifier.java:    public abstract Type verifyType(DecacCompiler compiler) throws ContextualError;
+src/main/java/fr/ensimag/deca/tree/AbstractInitialization.java:    protected abstract void verifyInitialization(DecacCompiler compiler,
+src/main/java/fr/ensimag/deca/tree/AbstractInst.java:    protected abstract void verifyInst(DecacCompiler compiler,
+src/main/java/fr/ensimag/deca/tree/AbstractMain.java:    protected abstract void verifyMain(DecacCompiler compiler) throws ContextualError;
+src/main/java/fr/ensimag/deca/tree/AbstractOpArith.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/AbstractOpBool.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/AbstractOpCmp.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/AbstractPrint.java:    protected void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/AbstractProgram.java:    public abstract void verifyProgram(DecacCompiler compiler) throws ContextualError;
+src/main/java/fr/ensimag/deca/tree/Assign.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/BooleanLiteral.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/ConvFloat.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/DeclClass.java:    protected void verifyClass(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/DeclClass.java:    protected void verifyClassMembers(DecacCompiler compiler)
+src/main/java/fr/ensimag/deca/tree/DeclClass.java:    protected void verifyClassBody(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/DeclVar.java:    protected void verifyDeclVar(DecacCompiler compiler,
+src/main/java/fr/ensimag/deca/tree/EmptyMain.java:    protected void verifyMain(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/FloatLiteral.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/Identifier.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/Identifier.java:    public Type verifyType(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/IfThenElse.java:    protected void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/Initialization.java:    protected void verifyInitialization(DecacCompiler compiler, Type t,
+src/main/java/fr/ensimag/deca/tree/IntLiteral.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/ListDeclClass.java:    void verifyListClass(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/ListDeclClass.java:        LOG.debug("verify listClass: start");
+src/main/java/fr/ensimag/deca/tree/ListDeclClass.java:        // LOG.debug("verify listClass: end");
+src/main/java/fr/ensimag/deca/tree/ListDeclClass.java:    public void verifyListClassMembers(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/ListDeclClass.java:    public void verifyListClassBody(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/ListDeclVar.java:    void verifyListDeclVariable(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/ListInst.java:    public void verifyListInst(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/Main.java:    protected void verifyMain(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/Main.java:        LOG.debug("verify Main: start");
+src/main/java/fr/ensimag/deca/tree/Main.java:        // A FAIRE: Appeler méthodes "verify*" de ListDeclVarSet et ListInst.
+src/main/java/fr/ensimag/deca/tree/Main.java:        LOG.debug("verify Main: end");
+src/main/java/fr/ensimag/deca/tree/Modulo.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/NoInitialization.java:    protected void verifyInitialization(DecacCompiler compiler, Type t,
+src/main/java/fr/ensimag/deca/tree/NoOperation.java:    protected void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/Not.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/Program.java:    public void verifyProgram(DecacCompiler compiler) throws ContextualError {
+src/main/java/fr/ensimag/deca/tree/Program.java:        LOG.debug("verify program: start");
+src/main/java/fr/ensimag/deca/tree/Program.java:        // LOG.debug("verify program: end");
+src/main/java/fr/ensimag/deca/tree/ReadFloat.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/ReadInt.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/StringLiteral.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/UnaryMinus.java:    public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/main/java/fr/ensimag/deca/tree/While.java:    protected void verifyInst(DecacCompiler compiler, EnvironmentExp localEnv,
+src/test/java/fr/ensimag/deca/context/ManualTestContext.java:            prog.verifyProgram(compiler);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        when(intexpr1.verifyExpr(compiler, null, null)).thenReturn(INT);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        when(intexpr2.verifyExpr(compiler, null, null)).thenReturn(INT);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        when(floatexpr1.verifyExpr(compiler, null, null)).thenReturn(FLOAT);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        when(floatexpr2.verifyExpr(compiler, null, null)).thenReturn(FLOAT);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        assertTrue(t.verifyExpr(compiler, null, null).isInt());
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        verify(intexpr1).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        verify(intexpr2).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        assertTrue(t.verifyExpr(compiler, null, null).isFloat());
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        verify(intexpr1).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        verify(floatexpr1).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        assertTrue(t.verifyExpr(compiler, null, null).isFloat());
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        verify(intexpr1).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusAdvanced.java:        verify(floatexpr1).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusPlain.java:        when(left.verifyExpr(compiler, null, null)).thenReturn(INT);
+src/test/java/fr/ensimag/deca/context/TestPlusPlain.java:        when(right.verifyExpr(compiler, null, null)).thenReturn(INT);
+src/test/java/fr/ensimag/deca/context/TestPlusPlain.java:        assertTrue(t.verifyExpr(compiler, null, null).isInt());
+src/test/java/fr/ensimag/deca/context/TestPlusPlain.java:        verify(left).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusPlain.java:        verify(right).verifyExpr(compiler, null, null);
+src/test/java/fr/ensimag/deca/context/TestPlusWithoutMock.java:        public Type verifyExpr(DecacCompiler compiler, EnvironmentExp localEnv,
+src/test/java/fr/ensimag/deca/context/TestPlusWithoutMock.java:            assertTrue(hasBeenVerified, "verifyExpr has not been called");
+src/test/java/fr/ensimag/deca/context/TestPlusWithoutMock.java:        assertTrue(t.verifyExpr(compiler, null, null).isInt());

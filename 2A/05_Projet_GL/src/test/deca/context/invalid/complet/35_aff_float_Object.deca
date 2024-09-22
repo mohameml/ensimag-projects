@@ -1,0 +1,11 @@
+// Description :
+//   afféctation float dans Object 
+// Resultats :
+//    ligne 10 :le float ne peut pas être affecté à Object
+// Historique :
+//  cree le 16/01/2024
+
+{
+    Object o ;
+    o = 1.5 ; 
+}

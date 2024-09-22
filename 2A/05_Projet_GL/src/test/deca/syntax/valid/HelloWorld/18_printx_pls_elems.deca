@@ -1,0 +1,12 @@
+// Description:
+//    Programme printx plusieurs elements
+// Resultats:
+//     Bonjour hello 
+//
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    printx("Bonjour ", "hello ");
+}

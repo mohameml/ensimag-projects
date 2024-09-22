@@ -1,0 +1,12 @@
+// Description :
+//      affcetation dans une varibale non déclarée 
+// Resultats :
+//    Erreur Contexteulle : fichier.deca:10:4:x identificateur non déclaré
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    x = 2 ;
+
+}

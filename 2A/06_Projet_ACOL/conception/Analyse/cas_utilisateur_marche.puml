@@ -1,0 +1,39 @@
+@startuml marché
+left to right direction
+' cas d'utilisation'
+package gestion_Marché as U {
+(Gestion du produit) as (1)
+(ajouter un produit) as (2)
+(modifier un produit) as (3)
+(changer le nobmre ) as (4)
+(affecter une action à un client)  as (5)
+
+(Gerer une transaction) as (6)
+(Accepter une transaction) as (7)
+(annuler une transaction) as (8)
+
+
+
+
+}
+' acteur'
+
+actor : gestionnaire du marché : as g
+
+g --> 1
+g --> 6
+
+ 
+' heritage '
+(1) <|-- (2)
+(1) <|-- (3)
+(3) <|-- (4)
+
+(6) <|-- (7)
+(6) <|-- (8)
+
+'include'
+
+4 .> 5 : include
+
+@enduml

@@ -1,0 +1,18 @@
+// Description:
+//    Programme avec test de lower
+// Resultats:
+//    OK
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int a = 3, b =2; 
+    boolean f = b<a;
+    if (f){
+        println("OK");
+    }
+    if (!f){
+        println("KO");
+    }
+}

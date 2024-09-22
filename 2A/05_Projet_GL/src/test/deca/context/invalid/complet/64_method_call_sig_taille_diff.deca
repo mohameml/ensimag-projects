@@ -1,0 +1,19 @@
+// Description :
+//   Appel de méthode de paramètre manquante
+// Resultats :
+//    ligne 18 :   La méthode add prend 2 paramètres alors que vous avez fourni 1 paramètres
+// Historique : 
+//  cree le 16/01/2024
+
+class A {
+    int add(int a , int b) {
+        return a + b ; 
+    }
+}
+
+
+{
+    A a = new A();
+
+    int res = a.add(1);
+}

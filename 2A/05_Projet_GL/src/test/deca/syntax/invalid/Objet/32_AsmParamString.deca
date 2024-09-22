@@ -1,0 +1,11 @@
+// Description:
+//    Programme utilisation de string comme paramétre pour asm
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:13: extraneous input '"hello"' expecting ')'
+// Historique:
+//    cree le 18/01/2023
+class A {
+    int x;
+    void get("hello") asm ("hello");
+    
+}

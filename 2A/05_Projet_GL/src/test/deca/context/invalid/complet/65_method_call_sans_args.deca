@@ -1,0 +1,21 @@
+// Description :
+//   Appel de méthode qui ne prend pas de params 
+// Resultats :
+//    ligne 18 :  la methode add ne prend pas de paramétres
+// Historique : 
+//  cree le 16/01/2024
+
+
+class A {
+
+    int add() {
+        return 1 ; 
+    }
+}
+
+
+{
+    A a = new A();
+
+    int res = a.add(0);
+}

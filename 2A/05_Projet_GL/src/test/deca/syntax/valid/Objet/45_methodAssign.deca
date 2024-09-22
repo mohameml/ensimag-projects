@@ -1,0 +1,14 @@
+// Description:
+//    Programme : utilisation de assign dans une methode
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 20/01/2024
+class A  {
+    protected int x;
+    int getX(int y){
+        x = x+5;
+        return y;
+    }
+}

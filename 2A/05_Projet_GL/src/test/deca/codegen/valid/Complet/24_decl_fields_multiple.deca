@@ -1,0 +1,25 @@
+// Description:
+//    Programme avec declaration multiple de fields.
+// Resultats:
+//    5
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2, y=3;
+}
+
+class B{
+    A a = new A();
+    int add(){
+        return a.x+a.y;
+    }
+}
+
+{
+    B b = new B();
+    print(b.add());
+    
+}
+

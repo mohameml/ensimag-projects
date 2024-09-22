@@ -1,0 +1,26 @@
+// Description:
+//    Table de multiplication décroissante
+// Resultats:
+//    Table de multiplication de 5
+//    5 * 30 = 150
+//    5 * 29 = 145
+//    5 * 28 = 140
+//    5 * 27 = 135
+//    5 * 26 = 130
+//    5 * 25 = 125
+//        ...
+//    5 * 0 = 0
+//
+// Historique:
+//    cree le 12/1/2024
+
+{
+   int n = 30;
+   int tb = 5;
+   println("Table de multiplication de ", tb);
+   while(n >= 0 ){
+    println(tb," * ",n , " = ", tb * n);
+    n = n-1;
+   }
+
+}

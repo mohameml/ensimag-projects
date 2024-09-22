@@ -1,0 +1,21 @@
+// Description:
+//    Programme : appele d'un methode dans main
+// Resultats:
+//      Programme correcte syntaxiquement incorrecte contextuellement car setX prend deux aruments
+//
+// Historique:
+//    cree le 20/01/2024
+class A {
+    int x,y;
+    void setX(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+{
+    A a = new A();
+    a.setX();
+    
+}

@@ -1,0 +1,15 @@
+# Do not version generated files.
+/target
+
+# These are IDE-specific files. We version pom.xml, and rely on IDE
+# integration with maven (or with maven's generation of IDE files like
+# mvn eclipse:eclipse).
+.classpath
+.project
+.metadata
+.settings
+
+# Ignorer les fichiers générés par ANTLR
+src/main/antlr4/fr/ensimag/deca/syntax/.antlr/*
+# Parce que chaque fois que l'on compile, cela génère de nouveaux fichiers,
+# et cela peut poser des problèmes de conflits lors du git pull et git merge

@@ -1,0 +1,16 @@
+class A {
+    int x = 2+2+2+2+2;
+    int y;
+    void m(int l, int m, int n , int k , int p, int o) { 
+        int w = l+m*n*k-p+o;
+    }
+    
+    void p() { }
+}
+
+class B extends A {
+    void p() { }
+    void q() {
+        int n = 2*2;
+    }
+}

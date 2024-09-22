@@ -1,0 +1,11 @@
+// Description:
+//    Programme main dans la definition d'une classe
+// Resultats:
+//      Programme incorrecte syntaxiquement :8:4: missing '}' at '{'
+// Historique:
+//    cree le 18/01/2023
+class A {
+    {
+        print("je suis dans main !");
+    }
+}

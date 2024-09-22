@@ -1,0 +1,17 @@
+// Description :
+//     redefinition du champ en methode 
+// Resultats :
+//    ligne 14 : une rédefinition inacceptable du x en tant que methode 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    int x ; 
+}
+
+class B extends A {
+
+    int x() {
+    
+    }
+}

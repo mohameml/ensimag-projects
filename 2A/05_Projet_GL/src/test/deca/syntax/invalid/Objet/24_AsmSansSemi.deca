@@ -1,0 +1,10 @@
+// Description:
+//    Programme mal utilisantion de asm sans ';'
+// Resultats:
+//      Programme incorrecte syntaxiquement : 10:0: missing ';' at '}'
+// Historique:
+//    cree le 17/01/2023
+class AB {
+    int f;
+    void getF() asm ("hello") 
+}

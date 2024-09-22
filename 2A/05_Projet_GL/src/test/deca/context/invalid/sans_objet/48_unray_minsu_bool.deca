@@ -1,0 +1,11 @@
+// Description :
+//      unray Minus devant un boolean 
+// Resultats :
+//    Erreur Contexteulle : ligne 10 : l'opération UnrayMinus - devant boolean n'est pas valide
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    - true ;
+}

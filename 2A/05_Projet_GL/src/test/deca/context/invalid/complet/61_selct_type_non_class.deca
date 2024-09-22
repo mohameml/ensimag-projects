@@ -1,0 +1,13 @@
+// Description :
+//   acces non def 
+// Resultats :
+//    ligne 12 :
+// Historique :  Le type attendu doit être un type de classe
+//  cree le 16/01/2024
+
+
+{
+    int a ;
+    a.x ;
+
+}

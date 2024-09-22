@@ -1,0 +1,10 @@
+// Description :
+//     Decl champ avec le type void 
+// Resultats :
+//    ligne 9 : le type attendu doit etre différent du void 
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+    void a ; 
+}

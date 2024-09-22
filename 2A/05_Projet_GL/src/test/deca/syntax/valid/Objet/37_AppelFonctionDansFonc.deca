@@ -1,0 +1,36 @@
+// Description:
+//    Programme : utilisation de methodcall avec expr =null
+// Resultats:
+//      Programme correcte 
+//
+// Historique:
+//    cree le 19/01/2024
+
+class A {
+    protected int x;
+    float y;
+    
+    int getX()
+    {
+        return x;
+    }
+
+    float getY()
+    {
+        return y;
+    }
+}
+
+class B extends A {
+    
+    
+    int getSomme()
+    {
+        return getX() + getY();
+    }
+}
+
+{
+    B b = new B();
+    print("b.getSomme() = ", b.getSomme);
+}

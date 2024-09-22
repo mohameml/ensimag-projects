@@ -1,0 +1,10 @@
+// Description:
+//    Programme definition d'une methode sans bloc et sans asm
+// Resultats:
+//      Programme incorrecte syntaxiquement : 10:0: mismatched input '}' expecting {'{', 'asm'}
+// Historique:
+//    cree le 17/01/2023
+class A extends B {
+    protected boolean f = true;
+    int getF()
+}

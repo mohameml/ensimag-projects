@@ -1,0 +1,47 @@
+====================== Projet ACOL : eu de simulation boursiére ========================
+
+
+
+# =============================== Compiler le Projet : ==========================
+
+1. Compiler le Projet
+
+make 
+
+2. lancer l'Application :
+
+make run 
+
+3. Nettoyer le projet :
+
+make clean 
+
+4.  compiler les fichiers latex :
+
+make doc 
+
+# ================================= Architecture du Projet : ======================
+
+src/ : contient les fichiers source .java 
+    vue/ : contient la partie Vue du modele MVC 
+    model/ : contient la partie modele du Modele MVC 
+    controle/ : contient la partie controle du Modele MVC 
+    util/ : contient les méthodes utilitaires 
+
+bin/ : conteint les fichiers .class 
+
+docs/ : contient les documents à rendre 
+
+lib/ : conteint les fichiers .jar 
+
+res/ : contient le sujet 
+
+database/ : contient les fichiers .sql 
+
+images/ : contient les icons de l'interface utilisateur 
+
+conception/ : contient les fichiers .puml pour les diagrammes UML 
+
+Makefile : fichier pour compiler le projet 
+
+A_LIRE.txt : Le fichier que vous êtes en train de lire maintenant !!!!! 

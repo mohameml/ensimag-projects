@@ -1,0 +1,35 @@
+// Description:
+//    Programme  avec plusieurs if et elseif qui prennet  plusières argument de comparaison  
+// Resultats:
+//      programme correcte syntaxiquement
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    if(x==y){}
+    else if (x==y){}
+
+    if(x!=y){}
+    else if (x!=y){}
+
+    if(x == -y){}
+    else if (x== -y){}
+
+    if(x > y){}
+    else if(x > y){}
+
+    if( x < y){}
+    else if( x < y){}
+
+    if(x >= y){}
+    else if( x >=y){}
+
+    if(x <= y){}
+    else if(x <= y){}
+
+    if( x = !y){}
+    else if( x = !y){}
+
+
+
+}

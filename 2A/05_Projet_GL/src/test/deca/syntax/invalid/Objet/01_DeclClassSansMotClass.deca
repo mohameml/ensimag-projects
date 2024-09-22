@@ -1,0 +1,10 @@
+// Description:
+//    Programme definir une class sans le mots clé class
+// Resultats:
+//      Programme incorrecte syntaxiquement : 8:0: no viable alternative at input 'A'
+//
+// Historique:
+//    cree le 20/12/2023
+A {
+    int x;
+}

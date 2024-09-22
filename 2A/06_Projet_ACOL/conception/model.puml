@@ -1,0 +1,48 @@
+@startuml Model 
+
+' class User {
+'     nom: String 
+'     solde : int 
+'     ListActions : HashMap<Action , Integer>
+
+'     + ajouterACtion()
+'     + ajouterArgent() 
+'     + retireArgent()
+    
+
+'}
+
+class Action {
+    nom : String 
+    prix : int 
+    rentabilite : int 
+    risque : int 
+
+}
+
+
+
+' Integer ici : réprsente le nombre des actions disponibles sur le marché par Action  
+
+' class Marche {
+    
+'     ListAction : HashMap<Action , Integer>
+
+'     + void setActionForSimulation()
+'     + Object[][] getActions()
+'     +  void enleverAction(Action choix , int nb)
+'     + void ajouterAction(Action choix , int nb)
+'     + void modifieNbAction(int nb , Action choix)
+
+
+
+
+' }
+
+
+' Marche "1..1" -- "1..*" Action 
+
+
+
+
+@enduml

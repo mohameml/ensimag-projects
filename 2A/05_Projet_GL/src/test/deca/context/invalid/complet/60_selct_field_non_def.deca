@@ -1,0 +1,15 @@
+// Description :
+//   acces a un champ non def dans main 
+// Resultats :
+//    ligne 14 :   x identificateur non déclaré
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+}
+
+{
+    A a ;
+    a.x;
+}

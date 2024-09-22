@@ -1,0 +1,11 @@
+// Description :
+//      Not ! devant float
+// Resultats :
+//    Erreur Contexteulle : ligne 10 : l'opération Not ! devant float  n'est pas valide
+//
+// Historique :
+// cree le 10/01/2024
+
+{
+    ! 1.5 ;
+}

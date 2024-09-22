@@ -1,0 +1,10 @@
+// Description:
+//    Programme mal utilisantion de asm , utilisation de float dans asm
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:23: mismatched input '5.5' expecting {STRING, MULTI_LINE_STRING}s
+// Historique:
+//    cree le 18/01/2023
+class H {
+    int f;
+    void F(int x) asm (5.5) ;
+}

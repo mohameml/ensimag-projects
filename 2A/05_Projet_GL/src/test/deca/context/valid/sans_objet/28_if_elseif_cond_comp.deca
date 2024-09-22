@@ -1,0 +1,23 @@
+// Description :
+//     Test de : if , else if , else    
+// Resultats :
+//    Valide 
+//
+// Historique :
+// cree le 10/01/2024
+{
+    int x ; 
+
+    if(2!=3)
+    {
+        x = 1 ;
+    }
+    else if(3 > 2)
+    {
+        x = 2 ;
+    }
+    else
+    {
+        x = 3 ;
+    }
+}

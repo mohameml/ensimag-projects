@@ -1,0 +1,15 @@
+// Description:
+//    afficher des calculs en hexa
+// Resultats:
+//     2.00000e+012.00000e+01
+//     0x1.4p+40x1.4p+4
+//
+// Historique:
+//    cree le 11/1/2024
+
+{
+    print(20.0);
+    println(20.0);
+    printx(20.0);
+    printlnx(20.0);
+}

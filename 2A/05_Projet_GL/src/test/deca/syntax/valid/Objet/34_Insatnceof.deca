@@ -1,0 +1,23 @@
+// Description:
+//    Programme : utilisation de instanceof
+// Resultats:
+//      Programme correcte syntaxiquement et faux contextuellement 
+//
+// Historique:
+//    cree le 19/01/2024
+class A {
+    int y;
+}
+class B extends A {
+
+}
+{
+    A a= new A();
+    if(a instanceof B)
+    {
+        print(" je suis instanceof B");
+    }else {
+        print(" je ne suis pas instanceof B");
+    }
+
+}

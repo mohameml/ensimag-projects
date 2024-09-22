@@ -1,0 +1,18 @@
+// Description :
+//   acces a un champ protege : condition 2 du poly 
+// Resultats :
+//    ligne 16 :  le type de A n'est pas un sous-type de B
+// Historique :
+//  cree le 16/01/2024
+
+
+class A {
+    protected int x;
+}
+
+class B extends A {
+
+    int getX(A a) {
+        return a.x;
+    }
+}

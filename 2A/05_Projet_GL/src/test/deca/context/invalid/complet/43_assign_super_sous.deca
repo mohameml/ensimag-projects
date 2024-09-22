@@ -1,0 +1,20 @@
+// Description :
+//   afféctation sous class dans super classe 
+// Resultats :
+//    ligne 17 :   le A ne peut pas être affecté à B
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+}
+
+class B extends A {
+    A a ; 
+    B b ; 
+    
+    int aff() {
+        b = a ;
+    }
+}
+

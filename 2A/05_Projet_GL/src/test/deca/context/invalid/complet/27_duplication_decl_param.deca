@@ -1,0 +1,13 @@
+// Description :
+//    duplication du Decl param 
+// Resultats :
+//    ligne 10 : a est déjà déclarée
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+    int add(int a , int a) {
+        
+    }
+}

@@ -1,0 +1,23 @@
+// Description:
+//    tests de programme correct, if et plusiseurs else if puis else
+//
+// Resultats:
+//    programme correct.
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    int a = 3, y=5 , z = 5,  t =4;
+    int x;
+    if(a==1)
+    {
+        x=y;
+    } else if (a != 2)
+    {
+        x=t;
+    }else if(a>3){
+        x=1;
+    }else{
+        x=z;
+    }
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec chaine sans guillement double à la fin.
+// Resultats:
+//    Erreur lexicographique : ligne 11 :4: token recognition error at: '"helloo world!\n}', absence de " à la fin, donc il compte } comme si c'était de la chaine. 
+//
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    "helloo world!
+}

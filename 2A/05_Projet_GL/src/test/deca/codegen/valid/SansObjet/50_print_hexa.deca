@@ -1,0 +1,29 @@
+// Description:
+//    afficher des calculs en hexa
+// Resultats:
+//     1
+//     -1
+//     0x1.a66666p+1
+//     -0x1.a66666p+1
+//     0x1p+1
+//     -0x1.4p+1
+//     0x1.133334p+2-0x1.27ae14p+18-2-0x1.0f83e2p+1
+//
+// Historique:
+//    cree le 11/1/2024
+
+
+
+{
+    int a   = 1;
+    int b   = -7;
+    float c = 3.3;
+    float d = -0.7;
+    printlnx(a);
+    printlnx(-a);
+    printlnx(c);
+    printlnx(-c);
+    printlnx(2.0);
+    printlnx(-2.5);
+    printx(a+c, d*c, a-b, b%5, b/c);
+}

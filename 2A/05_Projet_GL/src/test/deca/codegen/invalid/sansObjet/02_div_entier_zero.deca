@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec division par 0
+// Resultats:
+//    Erreur : Division par zero
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    int x = 5/0;
+    println(x);
+}

@@ -1,0 +1,10 @@
+// Description:
+//    Programme definition d'une  asm sans type
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:5: no viable alternative at input 'F('
+// Historique:
+//    cree le 18/01/2023
+class H {
+    int f;
+    F(int x) asm ("hello") ;
+}

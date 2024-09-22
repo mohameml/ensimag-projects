@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec guillement double non protégé
+// Resultats:
+//    Erreur lexicale : 11:19: no viable alternative at input 'je', on considère que la chaine est termminé juste avant je (le deuxième ").
+//
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    "helloo world!"je suis !"
+}

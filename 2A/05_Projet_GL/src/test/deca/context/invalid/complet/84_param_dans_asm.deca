@@ -1,0 +1,13 @@
+// Description :
+//  test du methodAsm Body 
+// Resultats :
+//    ligne 11 : identiﬁcateur de type non déclaré
+// Historique : 
+//  cree le 18/01/2024
+
+class A {
+
+    void get(B b ) asm (
+        "bonjour"
+    );
+}

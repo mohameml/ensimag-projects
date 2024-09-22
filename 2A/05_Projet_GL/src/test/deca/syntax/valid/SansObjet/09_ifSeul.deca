@@ -1,0 +1,17 @@
+// Description:
+//    tests de programme correct, if seul
+//
+// Resultats:
+//    programme correct.
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    if(true)
+    {
+        print("true");
+        println("true");
+        printx("true");
+        printlnx("true");
+    }
+}

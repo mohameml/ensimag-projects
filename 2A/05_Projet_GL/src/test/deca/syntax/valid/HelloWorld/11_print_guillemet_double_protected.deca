@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec guillemet double protégé
+// Resultats:
+//    helloo world! "je suis !
+//
+// Historique:
+//    cree le 20/12/2023
+
+
+{
+    print("helloo world! \" je suis !");
+}

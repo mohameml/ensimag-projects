@@ -1,0 +1,11 @@
+// Description :
+//   afféctation string dans Object 
+// Resultats :
+//    ligne 10 :le string ne peut pas être affecté à Object
+// Historique :
+//  cree le 16/01/2024
+
+{
+    Object o ;
+    o = "bonjour" ; 
+}

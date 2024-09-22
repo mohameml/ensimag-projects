@@ -1,0 +1,219 @@
+	TSTO #5
+	ADDSP #6
+; start main program
+	BOV pile_pleine
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table de méthodes de la classe A
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.A.affiche, R0
+	STORE R0, 5(GB)
+; Main program
+; Beginning of main instructions:
+	NEW #6, R2
+	BOV tas_plein
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.A
+	POP R2
+	STORE R2, 6(GB)
+	ADDSP #1
+	LOAD 6(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement.null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	HALT
+pile_pleine:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+tas_plein:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+dereferencement.null:
+	WSTR "Erreur : dereferencement de null"
+	WNL
+	ERROR
+Division_par_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+Debordement_arithmetique:
+	WSTR "Erreur : calcul arithmetique debordant"
+	WNL
+	ERROR
+Modulo_zero:
+	WSTR "Erreur : Reste de la division entière par 0"
+	WNL
+	ERROR
+Max_variable_temp:
+	WSTR "Erreur : L'expression de l'expression fait recours à trop de variables temporaires"
+	WNL
+	ERROR
+; -----------------------------------------------
+;                    Classe Object
+; -----------------------------------------------
+code.Object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; ---------------------------------------------------------
+;                  Classe A
+; ---------------------------------------------------------
+; ------- Initialisation des champs de A
+init.A:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #2, R2
+	LOAD #6, R3
+	MUL R2, R3
+	LOAD #4, R4
+	ADD R3, R4
+	LOAD #4, R5
+	LOAD #7, R6
+	MUL R5, R6
+	LOAD #2, R7
+	MUL R6, R7
+	ADD R4, R7
+	LOAD -2(LB), R8
+	STORE R7, 1(R8)
+	LOAD -2(LB), R2
+	LOAD 1(R2), R2
+	LOAD #43, R3
+	CMP R3, R2
+	SGE R3
+	LOAD -2(LB), R4
+	STORE R3, 2(R4)
+	LOAD #5, R2
+	FLOAT R2, R3
+	LOAD #0x1.0p2, R4
+	CMP R4, R3
+	SLE R4
+	LOAD -2(LB), R5
+	STORE R4, 3(R5)
+	LOAD #1, R2
+	LOAD #0, R3
+	LOAD #1, R4
+	CMP R4, R3
+	CMP R4, R2
+	SEQ R4
+	LOAD -2(LB), R5
+	STORE R4, 4(R5)
+	LOAD #1, R2
+	LOAD #0, R3
+	LOAD #0, R4
+	LOAD #1, R5
+	LOAD #0, R6
+	LOAD -2(LB), R7
+	STORE R6, 5(R7)
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; Code des méthodes de la classeA
+code.A.affiche:
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R2
+	LOAD 5(R2), R2
+	CMP #0, R2
+	BNE etiq_else.0
+	LOAD -2(LB), R2
+	LOAD 4(R2), R2
+	CMP #0, R2
+	BEQ etiq_else.0
+	LOAD -2(LB), R2
+	LOAD 2(R2), R2
+	CMP #0, R2
+	BEQ etiq_else.0
+	LOAD -2(LB), R2
+	LOAD 3(R2), R2
+	CMP #0, R2
+	BNE etiq_else.0
+	LOAD -2(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R1
+	WINT
+	BRA etiq_fin.0
+etiq_else.0:
+etiq_fin.0:
+	BRA fin.code.A.affiche
+	WSTR "Erreur : sortie de la methode code.A.affiche sans return"
+	WNL
+	ERROR
+fin.code.A.affiche:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; end main program

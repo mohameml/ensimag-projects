@@ -1,0 +1,20 @@
+@startuml
+
+Participant "Client" as C
+Participant "controle" as co
+Participant "marché" as U
+
+hide footbox
+
+C -> co : acheter(nombre, Action)
+activate co
+
+co -> U : nombreDisponible(nombre, Action)
+activate U
+
+U --> co : nombre d'action non valable
+deactivate U
+
+co --> C : erreur : nombre d'action non valable
+
+@enduml

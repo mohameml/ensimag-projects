@@ -1,0 +1,15 @@
+// Description:
+//    Programme avec instanciation d'objet.
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2;
+}
+
+class B{
+    A a = new A();
+}
+

@@ -1,0 +1,18 @@
+@startuml
+Participant "Client" as C
+Participant "Système" as S
+Participant "Base de donnée" as B
+hide footbox
+
+C -> S : crereCompte(username, Password)
+activate S
+
+S -> B : creat(username, Password)
+activate B
+
+B --> S : ok
+deactivate B
+
+S --> C : ok
+deactivate S
+@enduml

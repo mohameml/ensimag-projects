@@ -1,0 +1,22 @@
+// Description :
+//  une redefinition du methode du super super classe invalide 
+// Resultats :
+//    ligne 19 :  le boolean n'est pas un sous type du int
+// Historique : 
+//  cree le 16/01/2024
+
+class A {
+    boolean get() {
+
+    }
+}
+
+class B extends A {
+
+}
+
+class C extends B {
+    int get() {
+        
+    }
+}

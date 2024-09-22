@@ -1,0 +1,11 @@
+// Description :
+//    affecte un int par un float 
+// Resultats :
+//    Erreur Contexteulle : fichier.deca:4:12:le float ne peut pas être affecté à int
+//
+// Historique :
+// cree le 09/01/2024
+
+{
+    int x = 1.0 ;
+}

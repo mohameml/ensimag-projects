@@ -1,0 +1,17 @@
+// Description :
+//  comparaison entre les classes 
+// Resultats :
+//    ligne 16 :  l'opération < n'est pas possible entre 'A' et 'Object'
+// Historique : 
+//  cree le 16/01/2024
+
+class A {
+
+}
+
+
+{
+    A a ;
+    Object o ;
+    a < o ;
+}

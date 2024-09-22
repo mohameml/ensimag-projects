@@ -1,0 +1,17 @@
+// Description:
+//    Programme mal déclaration, on utilise juste new sans class.
+// Resultats:
+//      Programme incorrecte syntaxiquement : 16:13: mismatched input ';' expecting IDENT
+// Historique:
+//    cree le 18/01/2023
+class A {
+    protected int x;
+    int getX()
+    {
+        return x;
+    }
+}
+
+{
+    A a = new; 
+}

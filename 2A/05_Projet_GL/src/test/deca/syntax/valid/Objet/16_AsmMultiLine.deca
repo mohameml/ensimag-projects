@@ -1,0 +1,15 @@
+// Description:
+//    Programme : utilisation de asm avec multi_line_string
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 16/01/2024
+class A {
+    protected int x;
+    void get(int x) asm (
+        "hello 
+        brother "
+    );
+
+}

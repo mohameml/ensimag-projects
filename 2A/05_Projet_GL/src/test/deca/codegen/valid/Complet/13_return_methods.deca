@@ -1,0 +1,21 @@
+// Description:
+//    Programme avec méthodes qui retourne.
+// Resultats:
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2;
+    boolean k(boolean p, int y, float e){
+        return p;
+    }
+}
+
+class B{
+    A a;
+    protected A c;
+    int l(int w, float v, int n){
+        return n;
+    }
+}

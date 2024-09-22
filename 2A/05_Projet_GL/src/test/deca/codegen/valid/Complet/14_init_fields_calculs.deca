@@ -1,0 +1,26 @@
+// Description:
+//    Programme avec fields calculés.
+// Resultats:
+//    72
+//
+// Historique:
+//    cree le 21/1/2024
+
+class A{
+    int x=2*6+4+4*7*2;
+    boolean y = x>=43;
+    boolean z = 5<=4.0;
+    boolean i = true==(false!=true);
+    boolean u = true && (false && false) || (true && false);
+
+    void affiche(){
+        if (!u && i && y && !z){
+            print(x);
+        }
+    }
+}
+
+{
+    A a = new A();
+    a.affiche();
+}

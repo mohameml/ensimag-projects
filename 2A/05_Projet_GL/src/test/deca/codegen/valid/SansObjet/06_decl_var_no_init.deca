@@ -1,0 +1,12 @@
+// Description:
+//    Declaration de variables sans les initialiser
+// Resultats:
+//
+// Historique:
+//    cree le 11/1/2024
+
+{
+    int a;
+    float b;
+    boolean c;
+}

@@ -1,0 +1,11 @@
+// Description :
+//    initialisation d'un boolean par string
+// Resultats :
+//    Erreur Contexteulle : ligne 10 : le string ne peut pas être affecté à boolean
+//
+// Historique :
+// cree le 09/01/2024
+
+{
+    boolean  b = "bonjour" ;
+}

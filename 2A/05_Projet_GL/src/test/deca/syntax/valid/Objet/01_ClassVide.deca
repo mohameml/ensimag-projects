@@ -1,0 +1,8 @@
+// Description:
+//    Programme definir une class vide
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 15/01/2024
+class A{}

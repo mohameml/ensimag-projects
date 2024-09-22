@@ -1,0 +1,17 @@
+// Description:
+//    tests de programme else avant if 
+//
+// Resultats:
+//    ligne 11  : Erreur,  mismatched input 'else'
+//
+// Historique:
+//    cree le 09/01/2024
+{ 
+    int x;
+    else{
+        print("hello world");
+    }
+    if(x = 3){
+        print("hello world!");
+    }
+}

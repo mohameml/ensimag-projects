@@ -1,0 +1,24 @@
+// Description:
+//    Programme avec deux ifThenElse imbriqués
+// Resultats:
+//    Branche Deuxieme Then
+//
+// Historique:
+//    cree le 1/1/2024
+
+{
+    int y;
+    if (true!=false) {
+        y = -3; 
+        if (y==y){
+            print("Branch Deuxieme Then");
+        }
+        else {
+            print("Branch Deuxieme Else");
+        }
+        }
+    else {
+        print("Branch Else");
+    }
+
+}

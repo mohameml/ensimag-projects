@@ -1,0 +1,10 @@
+// Description:
+//    Programme declaration d'un champ dans main
+// Resultats:
+//      Programme incorrecte syntaxiquement :8:4: mismatched input 'protected' expecting 
+//   {'}', ';', '(', 'print', 'printx', 'println', 'printlnx', 'while', 'return', 'if', '-', '!', 'readInt', 'readFloat', 'new', INT, FLOAT, STRING, 'true', 'false', 'this', 'null', IDENT}
+// Historique:
+//    cree le 19/01/2023
+{
+    protected int x;
+}

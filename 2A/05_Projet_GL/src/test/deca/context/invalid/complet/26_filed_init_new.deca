@@ -1,0 +1,14 @@
+// Description :
+//    Assign invalide dans decl field : class A  --> class B 
+// Resultats :
+//    ligne 13 : le A ne peut pas être affecté à b
+// Historique :
+//  cree le 16/01/2024
+
+class A {
+
+}
+
+class B {
+    B b = new A();
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Programme declaration de plusieurs champ mais sans , entre les noms
+// Resultats:
+//      Programme incorrecte syntaxiquement : 8:18: no viable alternative at input 'Protectedintx'
+// Historique:
+//    cree le 16/01/2023
+class A extends B {
+    Protected int x y;
+}

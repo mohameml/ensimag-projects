@@ -1,0 +1,9 @@
+// Description:
+//    Programme declaration de avec initialisation mais en oubiliant une valeur après = 
+// Resultats:
+//      Programme incorrecte syntaxiquement : 8:18: no viable alternative at input 'Protectedintx'
+// Historique:
+//    cree le 17/01/2023
+class A extends B {
+    Protected int x =2, x=;
+}

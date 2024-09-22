@@ -1,0 +1,62 @@
+@startuml analyse 
+left to right direction
+
+actor user 
+
+
+rectangle fonctionnalités {
+    usecase identification as indf 
+    usecase connecter
+    usecase inscrire
+
+    usecase Profil  as pf 
+    usecase "voir le  Profile" as voiePf   
+    usecase "modifier le Profil" as modiPf 
+
+    usecase "Présentation des services et des fonctionnalités principales" as affServices 
+
+    usecase "Données" as donnees  
+    usecase "affichage des données de santé" as affDonne 
+    usecase "Graphiques pour visualiser les tendances des données de santé. " as grapheDonn
+    usecase "voir l'historique des données" as histoDonn 
+    usecase "filtrer l'historique des données" as filterDonn
+
+    usecase "Connexion d'une appareille avec  Bluetooth" as connBl 
+    ' usecase "connexion d'une appareille avec Bluetooth"  as connNV 
+    ' usecase "gestion des historiques de connexion" as connHisto 
+
+    usecase Notifications as notif 
+    usecase "Notifications pour les valeurs de santé critiques" as notifVal
+    usecase "Rappels pour les mesures régulières"   as rappel 
+    usecase "configurer des alertes personnalisées" as notifPerso 
+
+
+}
+ 
+connecter <|-- indf
+inscrire <|-- indf
+
+
+voiePf <|-- pf
+modiPf <|-- pf
+
+affDonne <|-- donnees
+grapheDonn <|-- donnees
+histoDonn <|-- donnees
+filterDonn <|-- donnees
+
+' connNV <|-- connBl
+' connHisto <|-- connBl
+
+notifVal <|-- notif
+rappel <|-- notif
+notifPerso <|-- notif
+
+
+user --> indf 
+user --> pf 
+user --> affServices 
+user --> donnees
+user --> connBl
+user --> notif
+@enduml

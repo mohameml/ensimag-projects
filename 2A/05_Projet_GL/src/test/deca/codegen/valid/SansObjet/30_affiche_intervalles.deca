@@ -1,0 +1,18 @@
+// Description:
+//    Affiche deux intervalles
+// Resultats:
+//     30...40 
+//     90...100
+// Historique:
+//    cree le 12/1/2024
+
+{
+     int n = 0;
+    int a = 30, b = 40, c = 90, d = 100;
+    while(n >= 0 && n <= 500){
+        if( (n>=a && n<=b) || (n >= c && n <= 100) ){
+            println(n);
+        }
+        n = n+1;
+    }
+}

@@ -1,0 +1,12 @@
+// Description:
+//    Programme utilisation de paramétre boolean sans type
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:21: missing IDENT at ')'
+// Historique:
+//    cree le 17/01/2023
+class A extends B {
+    protected boolean f = true;
+    void setF(boolean){
+        this.f = x;
+    }
+}

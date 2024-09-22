@@ -1,0 +1,11 @@
+// Description:
+//    Programme definir une class sans nom
+// Resultats:
+//      Programme incorrecte syntaxiquement : 9:6: extraneous input '{' expecting IDENT, on devrait utiliser ident (nom class) après class 
+//
+// Historique:
+//    cree le 16/01/2023
+
+class {
+    int x;
+}

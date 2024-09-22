@@ -1,0 +1,16 @@
+// Description :
+//  selection d'un champ protége dans main 
+// Resultats :
+//    ligne 15 :  On ne peut pas accéder à un champ protégé dans 'main' 
+// Historique : 
+//  cree le 16/01/2024
+
+
+class A {
+    protected int  x ;
+}
+
+{
+    A a ;
+    int b = a.x ;
+}

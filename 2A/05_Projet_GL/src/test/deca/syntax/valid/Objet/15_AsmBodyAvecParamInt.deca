@@ -1,0 +1,13 @@
+// Description:
+//    Programme : utilisation de asm avec la methode avec params
+// Resultats:
+//      Programme correcte
+//
+// Historique:
+//    cree le 16/01/2024
+class A {
+    protected int x;
+    void get(int x) asm (
+        "hello \' world"
+    );
+}

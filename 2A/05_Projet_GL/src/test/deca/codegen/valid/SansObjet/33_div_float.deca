@@ -1,0 +1,13 @@
+// Description:
+//    Programme avec division de flottants
+// Resultats:
+//    1.48148e-01
+//
+// Historique:
+//    cree le 10/1/2024
+
+{
+    float x = 1.0/2.5;
+    float y = x/2.7;
+    print(y);
+}

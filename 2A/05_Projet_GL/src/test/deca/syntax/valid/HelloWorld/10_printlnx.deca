@@ -1,0 +1,12 @@
+// Description:
+//    Programme avec printlnx simple.
+//
+// Resultats:
+//    Un printlnx
+//
+// Historique:
+//    cree le 20/12/2023
+
+{
+    printlnx("Un printlnx");
+}

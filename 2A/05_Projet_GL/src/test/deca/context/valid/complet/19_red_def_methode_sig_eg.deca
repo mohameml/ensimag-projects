@@ -1,0 +1,18 @@
+// Description :
+// Test valide contextulle
+// Resultats :
+//    Arbre avec décoration 
+// Historique : 
+//  cree le 18/01/2024
+
+class A {
+    int add(int a , int b ) {
+
+    }
+}
+
+class B {
+    int add(int c , int d) {
+        
+    }
+}

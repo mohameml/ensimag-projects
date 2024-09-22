@@ -1,0 +1,20 @@
+// Description:
+//    Programme  if and else sans elsif.
+//
+// Resultats:
+//programme correcte
+//    affiche : je suis dans else
+//
+// Historique:
+//    cree le 09/01/2024
+
+
+{  
+    int x=3*4;
+    if(x==2)
+    {   print("hello  je suis en if");
+    }else{
+        print("je suis dans else");
+    }
+}
+

@@ -1,0 +1,12 @@
+// Description:
+//    tests de programme incorrect syntaxiquement ,division incorrecte car l'opérande gauche n'est pas unary_expr
+//
+// Resultats:
+//    ligne 11 : Erreur, mismatched input '+'
+//
+// Historique:
+//    cree le 09/01/2024
+{
+    int x =0;
+    x = 1/+;
+}
