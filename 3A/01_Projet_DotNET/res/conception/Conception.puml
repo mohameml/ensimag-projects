@@ -1,0 +1,119 @@
+@startuml conception
+
+
+class   AlogSystematicStrategie {
+    + BasketTestParameters testParameters
+    + DateTime t0
+    + Pricer pricer 
+    + Portfoilio : PortfolioCouverture
+    + DetectRebalacing detectRebalacing 
+    + historiquesOutputData : List<OutputData>  
+    + String[] chemins // 0 : testParams.json , 1:data.csv , 2. output.json
+
+    + AlogSystematicStrategie(chemins , t0)
+    + void ExecuterAlogSystematicStrategie()
+    + void AddToHistorique(PricingResults res , double value , DateTime date )
+
+}
+
+AlogSystematicStrategie -- "1..*" OutputData
+AlogSystematicStrategie -- PortfolioCouverture
+
+class PortfolioCouverture {
+    + Compositions : double[]
+    + Value : double 
+    + DateOfValue : DateTime 
+    + void UpdateCompo(DateTime date , PricingResults res)
+    + double UpdatePortfolioValue(DateTime date)
+    + double CalCulValueInitiale(DateTime t0 ,PricingResults res)
+}
+
+
+class DetectRebalacing {
+    + abstract bool isRebalacing(DateTime Date)
+}
+
+class DetectRebalacingRegular {
+    + int count = 0 
+    + const int periode 
+    + DetectRebalacingRegular(DateTime Date  , const int periode)
+    + override bool isRebalacing((DateTime Date)
+}
+
+class DetectRebalacingWeekly {
+    + DateOfDay DateOfRebalacing
+    + DetectRebalacingWeekly(DateTime Date , DateOfDay DateOfRebalacing) 
+    + override bool isRebalacing((DateTime Date)
+}
+
+DetectRebalacing <|-- DetectRebalacingRegular
+DetectRebalacing <|-- DetectRebalacingWeekly
+
+
+
+' class CompostionActif {
+'     + Actif : ShareValue
+'     + Quantite : int 
+' }
+
+
+class OutputData {
+    + DateTime Date
+    + double Value
+    + Double[] Deltas
+    +  Double[] DeltasStdDev
+    +  double Price
+    + double PriceStdDev
+}
+
+class ShareValue {
+    + Id : String 
+    + DateOfPrice : DateTime 
+    + Value : double 
+}
+
+
+class MarketData {
+    + static data :  List<ShareValue>
+    + static double[] filterPricesInDate(DateTime date)
+    + static void AddShareValue(ShareValue ligne)
+}
+
+
+MarketData --"1..*" ShareValue
+
+
+class IConvertisseurFile {
+    + abstract string chemin
+}
+
+
+IConvertisseurFile <|-- CSVToListShareValue
+IConvertisseurFile <|-- JSONToTestParameters
+IConvertisseurFile <|-- ListOuputToJSON
+
+
+class CSVToListShareValue {
+    + List<ShareValue> listData
+    + CSVToListShareValue(string chemin)
+}
+
+class JSONToTestParameters {
+    + BasketTestParameters testParameters
+    - JSONString : string 
+    - JSONStringRebalacingDescription : String 
+    - JSONStringBasketParams : string 
+
+    + JSONToTestParameters(string chemin)
+    - ConvertJSONStringRebalacingDescription()
+    - ConvertJSONStringBasketParams()
+    + ConverteJSONToTestParameters()
+}
+
+class ListOuputToJSON {
+    +  List<OutputData>  historiquesOutputData 
+    + ListOuputToJSON(chemin , histo)
+
+}
+
+@enduml

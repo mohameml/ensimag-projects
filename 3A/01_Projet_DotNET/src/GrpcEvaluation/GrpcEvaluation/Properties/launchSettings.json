@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GrpcEvaluation": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\DELL 7280\\Desktop\\ENSIMAG\\3A\\01_ProjetDOTNET\\projet_dotnet\\TestData\\Test_1_1\\params_1_1.json\" \"C:\\Users\\DELL 7280\\Desktop\\ENSIMAG\\3A\\01_ProjetDOTNET\\projet_dotnet\\TestData\\Test_1_1\\data_1_1.csv\" \"C:\\Users\\DELL 7280\\Desktop\\ENSIMAG\\3A\\01_ProjetDOTNET\\projet_dotnet\\resGrpc.json\""
+    }
+  }
+}
