@@ -1,45 +1,53 @@
-# Projet : **Développement d'une Application de Tests de Stratégies Systématiques pour Portefeuilles de Couverture avec .NET**
+# Systematic Strategies — .NET Forward/Backtest Library for Hedging Portfolios
 
-## 1. **Description:**
+## 1. Description
 
--   Ce projet consiste à développer une application financière utilisant le framework .NET, destinée à servir d'outil d'aide à la décision pour réaliser des tests de validation (forward et backtests) sur des portefeuilles de couverture d'options.
+- A financial application built with the **.NET framework**, designed as a decision-support tool for running **forward and backtests** on option hedging portfolios.
+- Developed in **C#**, the application evaluates the performance of a hedging portfolio composed of underlying assets and the risk-free rate.
+- Includes **basket option payoff computation**, enabling analysis of systematic hedging strategies (self-financing portfolio, rebalancing oracle).
+- The project provides hands-on experience with modern software development practices and core quantitative finance principles.
 
--   L'application sera conçue en C# et intégrera des fonctionnalités permettant d'évaluer la performance d'un portefeuille composé d'actifs sous-jacents et de taux sans risque.
+## 2. Demo
 
--   Elle inclura également le calcul du payoff associé à des options de type panier, facilitant ainsi l'analyse des stratégies systématiques de couverture.
-
--   Ce projet offre une opportunité d'explorer les technologies modernes de développement logiciel et d'acquérir une compréhension approfondie des principes de la finance quantitative.
-
-## 2. **Démo:**
+### Run a backtest
 
 ```bash
 BacktestConsole.exe test-params.json mkt-data.csv output-file.json
-
 ```
 
-```python
+### Analyze results
 
-# fonction de test :
-def test(chemin):
-    # lectur de données :
-    df = pd.read_json(chemin, convert_dates=['date'])
+```python
+def test(path):
+    # Load data
+    df = pd.read_json(path, convert_dates=['date'])
     df.sort_values(by='date', inplace=True)
     df.set_index('date', inplace=True)
 
-    # plot :
+    # Plot hedging portfolio value vs. theoretical price
     ax = plt.gca()
-    df.plot(y = 'value', ax = ax)
-    df.plot(y = 'price', color = 'red', ax = ax)
+    df.plot(y='value', ax=ax)
+    df.plot(y='price', color='red', ax=ax)
     plt.show()
 
-    # calcul : tracking_error
-    tracking_error = (df['value'][-1] - df.price[-1])/df.price[0]
+    # Compute tracking error
+    tracking_error = (df['value'][-1] - df.price[-1]) / df.price[0]
     print(f'Tracking error: {tracking_error:.2%}')
-
     return tracking_error
 
-test(output-file.json)
-
+test("output-file.json")
 ```
 
-![alt text](images/image.png)
+![Hedging portfolio vs. theoretical price](images/image.png)
+
+## Tech Stack
+
+- **C# / .NET** — Core application
+- **NUnit** — Unit testing
+- **LINQ** — Data handling
+- **gRPC** — Communication with pricing server
+- **Python** — Result analysis and visualization
+
+## Academic Context
+
+Project completed at **ENSIMAG, Grenoble INP** as part of the Quantitative Finance specialization (MEQA), 2024–2025.
